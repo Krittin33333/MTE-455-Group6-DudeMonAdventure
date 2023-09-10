@@ -4,15 +4,15 @@ using UnityEngine;
 
 public enum FarmStage
 {
-    plowing,
-    sowing,
-    maintaining,
-    harvesting
+    seedState,
+    seedlingsState,
+    growState,
+    harvesState
 }
 
 public class Farm : Structure
 {
-    [SerializeField] private FarmStage stage = FarmStage.plowing;
+    [SerializeField] private FarmStage stage = FarmStage.seedState;
     public FarmStage Stage { get { return stage; } }
 
     [SerializeField] private int maxStaffNum = 3;
@@ -43,26 +43,26 @@ public class Farm : Structure
 
     public void CheckPlowing()
     {
-        if ((hp >= 100) && (stage == FarmStage.plowing))
+        if ((hp >= 100) && (stage == FarmStage.seedState))
         {
-            stage = FarmStage.sowing;
+            stage = FarmStage.seedlingsState;
             hp = 1;
         }
     }
 
     public void CheckSowing()
     {
-        if ((hp >= 100) && (stage == FarmStage.sowing))
+        if ((hp >= 100) && (stage == FarmStage.seedlingsState))
         {
             functional = true; //Plant will auto grow
-            stage = FarmStage.maintaining;
+            stage = FarmStage.growState;
             hp = 1;
         }
     }
 
     public void CheckMaintaining()
     {
-        if ((hp >= 100) && (stage == FarmStage.maintaining))
+        if ((hp >= 100) && (stage == FarmStage.growState))
         {
             produceTimer += Time.deltaTime;
             dayPassed = Mathf.CeilToInt(produceTimer / secondsPerDay);
@@ -70,7 +70,7 @@ public class Farm : Structure
             if ((functional == true) && (dayPassed >= dayRequired))
             {
                 produceTimer = 0;
-                stage = FarmStage.harvesting;
+                stage = FarmStage.harvesState;
                 hp = 1;
             }
         }
@@ -78,14 +78,14 @@ public class Farm : Structure
 
     public void CheckHarvesting()
     {
-        if ((hp >= 100) && (stage == FarmStage.harvesting))
+        if ((hp >= 100) && (stage == FarmStage.harvesState))
         {
             //harvest
          //   HarvestResult();
             // Debug.Log("Harvest +1000");
 
             hp = 1;
-            stage = FarmStage.sowing;
+            stage = FarmStage.seedState;
         }
     }
 
