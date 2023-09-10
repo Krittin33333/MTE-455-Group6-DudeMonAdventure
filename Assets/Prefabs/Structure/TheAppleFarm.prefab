@@ -180,12 +180,12 @@ MonoBehaviour:
   structureType: 10
   functional: 0
   structureName: Apple Tree
-  costToBuild: 0
-  id: 7
+  costToBuild: 5775
+  id: 8
   hp: 0
   stage: 0
   maxStaffNum: 3
-  dayRequired: 15
+  dayRequired: 21
   dayPassed: 0
   produceTimer: 0
   FarmUI: {fileID: 0}
