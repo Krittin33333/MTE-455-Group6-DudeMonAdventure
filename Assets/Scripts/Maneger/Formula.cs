@@ -5,10 +5,10 @@ using UnityEngine.EventSystems;
 
 public class Formula : MonoBehaviour
 {
-    private Camera cam;
+    public Camera cam;
 
     public static Formula instance;
-    private int _gridSize = 5;
+    private float _gridSize = 0.5f;
 
     void Awake()
     {
@@ -18,13 +18,14 @@ public class Formula : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
+       // cam = Camera.main;
     }
 
     public Vector3 GetCurTilePosition()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) //Hover over UI
+        if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
         {
+            // Debug.Log(1);
             return new Vector3(0, -99, 0);
         }
 
@@ -42,6 +43,7 @@ public class Formula : MonoBehaviour
 
             return newPos;
         }
+        
 
         return new Vector3(0, -99, 0);
     }

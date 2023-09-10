@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 44716421}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 224674963}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 265208838}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1799,7 +1799,7 @@ GameObject:
   - component: {fileID: 497821587}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1909,7 +1909,7 @@ GameObject:
   - component: {fileID: 504124371}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2007,7 +2007,7 @@ GameObject:
   - component: {fileID: 510378681}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2188,6 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9414f39fe6f0204bb8b53d9a7fd0c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 265208839}
 --- !u!1 &556270920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,7 +2338,7 @@ GameObject:
   - component: {fileID: 590142337}
   m_Layer: 0
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2435,7 +2436,7 @@ GameObject:
   - component: {fileID: 597339674}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2683,7 +2684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8853017656612100424, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.33
+      value: 9.86
       objectReference: {fileID: 0}
     - target: {fileID: 8853017656612100424, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2691,7 +2692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8853017656612100424, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.47
+      value: 8.82
       objectReference: {fileID: 0}
     - target: {fileID: 8853017656612100424, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3276,7 +3277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &945276445
 Transform:
   m_ObjectHideFlags: 0
@@ -3754,7 +3755,7 @@ GameObject:
   - component: {fileID: 1087714527}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5085,7 +5086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1430229854
 Transform:
   m_ObjectHideFlags: 0
@@ -5094,7 +5095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430229853}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0}
   m_LocalScale: {x: 3, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5486,7 +5487,7 @@ GameObject:
   - component: {fileID: 1569863922}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5596,7 +5597,7 @@ GameObject:
   - component: {fileID: 1590842067}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5636,7 +5637,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590842065}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5737,7 +5738,7 @@ GameObject:
   - component: {fileID: 1633276223}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6276,6 +6277,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 716005696931174282, guid: 394ed64059a8db642a359a102e4e40eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5431777067236588483, guid: 394ed64059a8db642a359a102e4e40eb, type: 3}
       propertyPath: m_Name
       value: TheAppleFarm
@@ -6286,7 +6291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8877116283556667701, guid: 394ed64059a8db642a359a102e4e40eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.208
+      value: 12.51
       objectReference: {fileID: 0}
     - target: {fileID: 8877116283556667701, guid: 394ed64059a8db642a359a102e4e40eb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6294,7 +6299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8877116283556667701, guid: 394ed64059a8db642a359a102e4e40eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3704064
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 8877116283556667701, guid: 394ed64059a8db642a359a102e4e40eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6417,7 +6422,7 @@ GameObject:
   - component: {fileID: 1806751472}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
