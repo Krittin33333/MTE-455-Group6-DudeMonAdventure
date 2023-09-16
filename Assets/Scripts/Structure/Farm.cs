@@ -32,6 +32,8 @@ public class Farm : Structure
     [SerializeField] private List<Worker> currentWorkers;
     public List<Worker> CurrentWorkers { get { return currentWorkers; } set { currentWorkers = value; } }
 
+    [SerializeField] private GameObject[] Stages;
+
     // Update is called once per frame
     void Update()
     {
@@ -47,6 +49,8 @@ public class Farm : Structure
         {
             stage = FarmStage.seedlingsState;
             hp = 1;
+            ChangeStage(0);
+            Debug.Log(1);
         }
     }
 
@@ -57,6 +61,7 @@ public class Farm : Structure
             functional = true; //Plant will auto grow
             stage = FarmStage.growState;
             hp = 1;
+            ChangeStage(1);
         }
     }
 
@@ -72,6 +77,7 @@ public class Farm : Structure
                 produceTimer = 0;
                 stage = FarmStage.harvesState;
                 hp = 1;
+                ChangeStage(2);
             }
         }
     }
@@ -80,8 +86,9 @@ public class Farm : Structure
     {
         if ((hp >= 100) && (stage == FarmStage.harvesState))
         {
+            ChangeStage(3);
             //harvest
-         //   HarvestResult();
+            //   HarvestResult();
             // Debug.Log("Harvest +1000");
 
             hp = 1;
@@ -110,24 +117,37 @@ public class Farm : Structure
         }
     }
 
-   /* public void HarvestResult()
+    public void DisableAllStage()
     {
-        switch (structureType)
-        {
-            case StructureType.wheat:
-                {
-                    Office.instance.Wheat += 1000;
-                    break;
-                }
-            case StructureType.melon:
-                {
-                    Office.instance.Melon += 1200;
-                    break;
-                }
-        }
+        for (int i = 0; i < Stages.Length; i++)
+            Stages[i].SetActive(false);
+        // Debug.Log(1);
+    }
 
-        MainUI.instance.UpdateResourceUI();
-    }*/
+    private void ChangeStage(int i)
+    {
+        DisableAllStage();
+        Stages[i].SetActive(true);
+    }
+
+    /* public void HarvestResult()
+     {
+         switch (structureType)
+         {
+             case StructureType.wheat:
+                 {
+                     Office.instance.Wheat += 1000;
+                     break;
+                 }
+             case StructureType.melon:
+                 {
+                     Office.instance.Melon += 1200;
+                     break;
+                 }
+         }
+
+         MainUI.instance.UpdateResourceUI();
+     }*/
 
 
 
