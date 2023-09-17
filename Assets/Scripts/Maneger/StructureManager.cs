@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class StructureManager : MonoBehaviour
 {
@@ -22,12 +23,14 @@ public class StructureManager : MonoBehaviour
 
     [SerializeField] private GameObject[] structurePrefab;
 
-    
+    public GameObject demolishCursor;
+
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -43,6 +46,11 @@ public class StructureManager : MonoBehaviour
         if (isConstructing) //Mode Construct
         {
             buildingCursor.transform.position = curCursorPos;
+            gridPlane.SetActive(true);
+        }
+        else if (isDemolishing)
+        {
+            demolishCursor.transform.position = curCursorPos;
             gridPlane.SetActive(true);
         }
         else //Mode Play
@@ -90,6 +98,10 @@ public class StructureManager : MonoBehaviour
         {
             if (isConstructing)
                 PlaceBuilding(); //Real Construction
+            else if (isDemolishing)
+                Demolish();
+            else
+                CheckOpenPanel();
         }
     }
     private void CancelStructureMode()
@@ -99,7 +111,67 @@ public class StructureManager : MonoBehaviour
         if (buildingCursor != null)
             buildingCursor.SetActive(false);
 
+        if (demolishCursor != null)
+            demolishCursor.SetActive(false);
+
         if (ghostBuilding != null)
             Destroy(ghostBuilding);
     }
+
+    private void Demolish()
+    {
+        
+        Structure s = Office.instance.Structures.Find(x => x.transform.position == curCursorPos);
+
+        if (s != null)
+        {
+            Debug.Log(0);
+            Office.instance.RemoveBuilding(s);
+        }
+
+      //  MainUI.instance.UpdateResourceUI();
+    }
+
+
+    public void ToggleDemolish() //Map with Demolish Btn
+    {
+        isConstructing = false;
+        isDemolishing = !isDemolishing;
+
+        gridPlane.SetActive(isDemolishing);
+        demolishCursor.SetActive(isDemolishing);
+    }
+
+    public void OpenFarmPanel()
+    {
+        string name = CurStructure.GetComponent<Farm>().StructureName;
+
+        MainUI.instance.FarmNameText.text = name;
+        MainUI.instance.ToggleFarmPanel();
+    }
+
+    private void CheckOpenPanel()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        //if we left click something
+        if (Physics.Raycast(ray, out hit, 1000))
+        {
+            //Mouse over UI
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            CurStructure = hit.collider.gameObject;
+
+            switch (hit.collider.tag)
+            {
+                case "Farm": // if we click Object with Farm tag 
+                    OpenFarmPanel();
+                    break;
+
+            }
+        }
+    }
+
 }
