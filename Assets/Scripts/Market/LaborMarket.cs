@@ -37,32 +37,28 @@ public class LaborMarket : MonoBehaviour
 
     public void GenerateCandidate()
     {
-
         for (int i = 0; i < maxStaffInMarket; i++)
         {
-            Debug.Log(0);
             GameObject staffObj = Instantiate(workerPrefab, workerParent.transform);
 
             Worker w = staffObj.GetComponent<Worker>();
 
             w.ID = i;
-            w.InitiateCharID(Random.Range(0, 1));
-           // w.SetGender();
+            w.InitiateCharID(Random.Range(0, 3));
+          //  w.SetGender();
             w.ChangeCharSkin();
 
             w.StaffName = SetName(w);
             w.DailyWage = Random.Range(80, 120);
-            w.ChangeCharSkin(); //show 3d model
-          //  w.SetToWalk(Office.instance.SpawnPosition.transform.position);
 
             laborInMarket.Add(staffObj);
 
             GameObject cardObj = InitializeLaborCard(w);
 
             laborCardInMarket.Add(cardObj);
-            Debug.Log(0);
         }
     }
+
 
     private string SetName(Worker w)
     {

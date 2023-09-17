@@ -25,6 +25,7 @@ public class Office : MonoBehaviour
 
     [SerializeField] private GameObject spawnPosition;
     public GameObject SpawnPosition { get { return spawnPosition; } }
+
     [SerializeField] private GameObject rallyPosition;
 
     public static Office instance;
@@ -45,7 +46,7 @@ public class Office : MonoBehaviour
         Destroy(s.gameObject);
     }
 
-    public bool ToHireStaff(GameObject workerObj)
+ public bool ToHireStaff(GameObject workerObj)
     {
         if (money <= 0)
             return false;
@@ -55,6 +56,8 @@ public class Office : MonoBehaviour
         Worker w = workerObj.GetComponent<Worker>();
 
         w.Hired = true; //Hire this worker
+        w.ChangeCharSkin(); //Show 3D model
+        w.SetToWalk(rallyPosition.transform.position);
 
         money -= w.DailyWage;
         AddStaff(w);
