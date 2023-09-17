@@ -15,6 +15,8 @@ public class MainUI : MonoBehaviour
 
     public GameObject farmPanel;
 
+    public GameObject laborMarketPanel;
+
     public static MainUI instance;
 
     // Start is called before the first frame update
@@ -37,5 +39,13 @@ public class MainUI : MonoBehaviour
             farmPanel.SetActive(true);
         else
             farmPanel.SetActive(false);
+    }
+
+    public void ToggleLaborPanel()
+    {
+        if (!laborMarketPanel.activeInHierarchy)
+            laborMarketPanel.SetActive(true);
+        else
+            laborMarketPanel.SetActive(false);
     }
 }
