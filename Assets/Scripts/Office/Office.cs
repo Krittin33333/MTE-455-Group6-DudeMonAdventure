@@ -11,16 +11,6 @@ public class Office : MonoBehaviour
     [SerializeField] private List<Worker> workers = new List<Worker>();
     public List<Worker> Workers { get { return workers; } }
 
-    [SerializeField] private int wheat;
-    public int Wheat { get { return wheat; } set { wheat = value; } }
-    [SerializeField] private int melon;
-    public int Melon { get { return melon; } set { melon = value; } }
-    [SerializeField] private int corn;
-    public int Corn { get { return corn; } set { corn = value; } }
-    [SerializeField] private int milk;
-    public int Milk { get { return milk; } set { milk = value; } }
-    [SerializeField] private int apple;
-    public int Apple { get { return apple; } set { apple = value; } }
 
     [SerializeField] private int dailyCostWages;
 
@@ -78,5 +68,11 @@ public class Office : MonoBehaviour
     {
         workers.Add(w);
         dailyCostWages += w.DailyWage;
+    }
+
+    private void DeductMoney(int cost)
+    {
+        Office.instance.Money -= cost;
+        MainUI.instance.UpdateResourceUI();
     }
 }
