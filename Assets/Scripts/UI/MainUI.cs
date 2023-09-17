@@ -7,7 +7,7 @@ public class MainUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text moneyText;
     [SerializeField] private TMP_Text staffText;
-    [SerializeField] private TMP_Text wheatText;
+  //  [SerializeField] private TMP_Text wheatText;
 
     [SerializeField] private TMP_Text farmNameText;
     public TMP_Text FarmNameText
