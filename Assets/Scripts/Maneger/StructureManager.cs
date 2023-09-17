@@ -129,7 +129,19 @@ public class StructureManager : MonoBehaviour
             Office.instance.RemoveBuilding(s);
         }
 
-      //  MainUI.instance.UpdateResourceUI();
+     /*   Structure s = Office.instance.Structures.Find(x => x.CompareTag("Farm"));
+        if (s == null)
+        {
+            Debug.Log(0);
+            return;
+        }
+        if (s != null)
+        {
+            Debug.Log(1);
+            Office.instance.RemoveBuilding(s);
+        }  */
+
+        //  MainUI.instance.UpdateResourceUI();
     }
 
 
