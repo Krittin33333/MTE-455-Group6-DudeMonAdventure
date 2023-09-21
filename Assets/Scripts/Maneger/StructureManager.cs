@@ -136,9 +136,10 @@ public class StructureManager : MonoBehaviour
         if (buildingCursor != null)
             buildingCursor.SetActive(false);
 
-        if (demolishCursor != null)
+        if (demolishCursor != null) { 
             demolishCursor.SetActive(false);
-
+            isDemolishing = false;
+        }
         if (ghostBuilding != null)
             Destroy(ghostBuilding);
     }
