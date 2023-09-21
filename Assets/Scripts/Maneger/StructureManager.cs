@@ -96,6 +96,12 @@ public class StructureManager : MonoBehaviour
         MainUI.instance.UpdateResourceUI();
     }
 
+    private void SellBack(int cost)
+    {
+        Office.instance.Money += cost;
+        MainUI.instance.UpdateResourceUI();
+    }
+
     private void PlaceBuilding()
     {
         if (buildingCursor.GetComponent<FindBuildingSite>().CanBuild == false)
@@ -153,6 +159,7 @@ public class StructureManager : MonoBehaviour
         {
             Debug.Log(0);
             Office.instance.RemoveBuilding(s);
+            SellBack(s.CostToBuild);
         }
 
      /*   Structure s = Office.instance.Structures.Find(x => x.CompareTag("Farm"));
