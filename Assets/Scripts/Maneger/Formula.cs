@@ -25,7 +25,7 @@ public class Formula : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
         {
-            // Debug.Log(1);
+            Debug.Log(Input.mousePosition);
             return new Vector3(0, -99, 0);
         }
 
@@ -40,7 +40,7 @@ public class Formula : MonoBehaviour
             newPos = new Vector3(Mathf.RoundToInt(newPos.x / _gridSize) * _gridSize,
                                  0.0f,
                                  Mathf.RoundToInt(newPos.z / _gridSize) * _gridSize);
-
+            
             return newPos;
         }
         
