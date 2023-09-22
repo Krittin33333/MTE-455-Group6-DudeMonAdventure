@@ -206,7 +206,7 @@ public class StructureManager : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 1000))
         {
             //Mouse over UI
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject() == false)
                 return;
 
             CurStructure = hit.collider.gameObject;

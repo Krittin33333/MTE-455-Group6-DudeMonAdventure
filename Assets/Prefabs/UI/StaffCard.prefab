@@ -571,7 +571,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487057565718070655}
         m_TargetAssemblyTypeName: StaffCard, Assembly-CSharp
-        m_MethodName: Hire
+        m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

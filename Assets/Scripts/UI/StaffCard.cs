@@ -51,7 +51,7 @@ public class StaffCard : MonoBehaviour
             FireButton.gameObject.SetActive(true);
         }
     }
-   /* public void Fire()
+    public void Fire()
     {
         bool fired = Office.instance.ToFireStaff(LaborMarket.instance.LaborInMarket[id]);
 
@@ -61,5 +61,5 @@ public class StaffCard : MonoBehaviour
             HireButton.gameObject.SetActive(true);
             FireButton.gameObject.SetActive(false);
         }
-    }*/
+    }
 }

@@ -56,6 +56,7 @@ public class LaborMarket : MonoBehaviour
             GameObject cardObj = InitializeLaborCard(w);
 
             laborCardInMarket.Add(cardObj);
+            staffObj.SetActive(false);
         }
     }
 
