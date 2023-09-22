@@ -36,6 +36,10 @@ public class Worker : Unit
     private float CheckStateTimer = 0f;
     private float CheckStateTimeWait = 0.5f;
 
+    void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -43,7 +47,7 @@ public class Worker : Unit
         CheckStaffState();
     }
 
-    private void CheckStaffState()
+    protected void CheckStaffState()
     {
         CheckStateTimer += Time.deltaTime;
 
@@ -54,8 +58,9 @@ public class Worker : Unit
         }
     }
 
-    private void SwitchStaffState()
+    protected void SwitchStaffState()
     {
+
         switch (state)
         {
             case UnitState.Walk:
@@ -64,14 +69,14 @@ public class Worker : Unit
         }
     }
 
-    private void WalkUpdate()
+    protected void WalkUpdate()
     {
         distance = Vector3.Distance(navAgent.destination, transform.position);
 
         if (distance <= 3f)
         {
             navAgent.isStopped = true;
-           // state = UnitState.Idle;
+            state = UnitState.Idle;
         }
     }
 

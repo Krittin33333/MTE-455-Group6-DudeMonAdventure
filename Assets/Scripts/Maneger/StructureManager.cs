@@ -59,6 +59,8 @@ public class StructureManager : MonoBehaviour
         }
 
         CheckLeftClick();
+
+
     }
 
     public void BeginNewBuildingPlacement(GameObject prefab)

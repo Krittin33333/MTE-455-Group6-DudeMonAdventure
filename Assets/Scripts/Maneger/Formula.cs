@@ -25,7 +25,7 @@ public class Formula : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
         {
-            Debug.Log(Input.mousePosition);
+            //Debug.Log(Input.mousePosition);
             return new Vector3(0, -99, 0);
         }
 
@@ -36,11 +36,12 @@ public class Formula : MonoBehaviour
 
         if (plane.Raycast(ray, out rayDistance))
         {
+            
             Vector3 newPos = ray.GetPoint(rayDistance);
             newPos = new Vector3(Mathf.RoundToInt(newPos.x / _gridSize) * _gridSize,
                                  0.0f,
                                  Mathf.RoundToInt(newPos.z / _gridSize) * _gridSize);
-            
+            //Debug.Log(newPos);
             return newPos;
         }
         
