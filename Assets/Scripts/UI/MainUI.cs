@@ -14,8 +14,8 @@ public class MainUI : MonoBehaviour
     { get { return farmNameText; } set { farmNameText = value; } }
 
     public GameObject farmPanel;
-
     public GameObject laborMarketPanel;
+    public GameObject SettingPanel;
 
     public static MainUI instance;
 
@@ -51,5 +51,13 @@ public class MainUI : MonoBehaviour
             laborMarketPanel.SetActive(true);
         else
             laborMarketPanel.SetActive(false);
+    }
+
+    public void ToggleSettingPanel()
+    {
+        if (!SettingPanel.activeInHierarchy)
+            SettingPanel.SetActive(true);
+        else
+            SettingPanel.SetActive(false);
     }
 }

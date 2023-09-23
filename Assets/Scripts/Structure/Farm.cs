@@ -89,7 +89,7 @@ public class Farm : Structure
         {
             HarvestResult();
             Debug.Log("CheckHarvestResult!!");
-            Debug.Log(stage);
+            
             // ChangeStage(3);
             hp = 1;
             stage = FarmStage.seedState;
@@ -139,9 +139,7 @@ public class Farm : Structure
         {
             case StructureType.carrot:
                 {
-                    Debug.Log(Office.instance.Money);
                     Office.instance.Money += 25;
-                    Debug.Log(Office.instance.Money);
                     break;
                 }
             case StructureType.corn:
