@@ -139,52 +139,54 @@ public class Farm : Structure
         {
             case StructureType.carrot:
                 {
-                    Office.instance.Money += 1000;
+                    Debug.Log(Office.instance.Money);
+                    Office.instance.Money += 25;
+                    Debug.Log(Office.instance.Money);
                     break;
                 }
             case StructureType.corn:
                 {
-                    Office.instance.Money += 1200;
+                    Office.instance.Money += 47;
                     break;
                 }
             case StructureType.potato:
                 {
-                    Office.instance.Money += 1000;
+                    Office.instance.Money += 150;
                     break;
                 }
             case StructureType.tomato:
                 {
-                    Office.instance.Money += 1200;
+                    Office.instance.Money += 300;
                     break;
                 }
             case StructureType.melon:
                 {
-                    Office.instance.Money += 1000;
+                    Office.instance.Money += 750;
                     break;
                 }
             case StructureType.orange:
                 {
-                    Office.instance.Money += 1200;
+                    Office.instance.Money += 375;
                     break;
                 }
             case StructureType.mango:
                 {
-                    Office.instance.Money += 1000;
+                    Office.instance.Money += 844;
                     break;
                 }
             case StructureType.apple:
                 {
-                    Office.instance.Money += 1200;
+                    Office.instance.Money += 3000;
                     break;
                 }
             case StructureType.banana:
                 {
-                    Office.instance.Money += 1000;
+                    Office.instance.Money += 4688;
                     break;
                 }
             case StructureType.coconut:
                 {
-                    Office.instance.Money += 1200;
+                    Office.instance.Money += 3375;
                     break;
                 }
         }

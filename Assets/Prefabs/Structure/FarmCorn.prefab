@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9360f69d0797d448075d01a7a231c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  structureType: 10
+  structureType: 4
   functional: 0
   structureName: Corn Farm
   costToBuild: 315
