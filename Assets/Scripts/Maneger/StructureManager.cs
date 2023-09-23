@@ -25,12 +25,12 @@ public class StructureManager : MonoBehaviour
 
     public GameObject demolishCursor;
 
-    public Camera cam;
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
-        //cam = Camera.main;
+        cam = Camera.main;
     }
 
     // Update is called once per frame
