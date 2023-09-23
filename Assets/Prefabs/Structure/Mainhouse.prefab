@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 8853017656612100424}
   - component: {fileID: 1539117801470291600}
   - component: {fileID: 3889513050612718528}
+  - component: {fileID: -6083228966425002015}
   m_Layer: 0
   m_Name: Mainhouse
   m_TagString: Farm
@@ -160,6 +161,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5, y: 4, z: 4.5}
   m_Center: {x: 0, y: 1.89, z: 0}
+--- !u!114 &-6083228966425002015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2927303341973138276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85e29eee06c8234ea1da894143eef0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 1
+  functional: 0
+  structureName: 
+  costToBuild: 0
+  id: 0
+  hp: 0
 --- !u!1001 &640090317417880496
 PrefabInstance:
   m_ObjectHideFlags: 0

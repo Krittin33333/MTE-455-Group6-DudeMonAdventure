@@ -164,13 +164,13 @@ MonoBehaviour:
   structureType: 12
   functional: 0
   structureName: Coconut Tree
-  costToBuild: 4500
+  costToBuild: 11250
   id: 6
   hp: 0
   stage: 0
   maxStaffNum: 3
-  dayRequired: 15
-  dayPassed: 0
+  timeRequired: 15
+  timePassed: 0
   produceTimer: 0
   FarmUI: {fileID: 0}
   currentWorkers: []

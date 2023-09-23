@@ -180,7 +180,7 @@ MonoBehaviour:
   structureType: 10
   functional: 0
   structureName: Corn Farm
-  costToBuild: 275
+  costToBuild: 315
   id: 1
   hp: 0
   stage: 0

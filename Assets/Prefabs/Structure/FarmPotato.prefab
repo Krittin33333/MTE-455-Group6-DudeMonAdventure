@@ -180,7 +180,7 @@ MonoBehaviour:
   structureType: 10
   functional: 0
   structureName: Potato Farm
-  costToBuild: 410
+  costToBuild: 750
   id: 2
   hp: 0
   stage: 0

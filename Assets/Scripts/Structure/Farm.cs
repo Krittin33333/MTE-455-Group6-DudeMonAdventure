@@ -133,12 +133,63 @@ public class Farm : Structure
          Stages[i].SetActive(true);
      }*/
 
-     public void HarvestResult()
-     {
-         Office.instance.Money += 100000;
+    public void HarvestResult()
+    {
+        switch (structureType)
+        {
+            case StructureType.carrot:
+                {
+                    Office.instance.Money += 1000;
+                    break;
+                }
+            case StructureType.corn:
+                {
+                    Office.instance.Money += 1200;
+                    break;
+                }
+            case StructureType.potato:
+                {
+                    Office.instance.Money += 1000;
+                    break;
+                }
+            case StructureType.tomato:
+                {
+                    Office.instance.Money += 1200;
+                    break;
+                }
+            case StructureType.melon:
+                {
+                    Office.instance.Money += 1000;
+                    break;
+                }
+            case StructureType.orange:
+                {
+                    Office.instance.Money += 1200;
+                    break;
+                }
+            case StructureType.mango:
+                {
+                    Office.instance.Money += 1000;
+                    break;
+                }
+            case StructureType.apple:
+                {
+                    Office.instance.Money += 1200;
+                    break;
+                }
+            case StructureType.banana:
+                {
+                    Office.instance.Money += 1000;
+                    break;
+                }
+            case StructureType.coconut:
+                {
+                    Office.instance.Money += 1200;
+                    break;
+                }
+        }
         MainUI.instance.UpdateResourceUI();
-     }
-
+    }
 
 
 

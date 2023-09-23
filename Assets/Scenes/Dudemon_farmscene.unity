@@ -6522,6 +6522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mainhouse
       objectReference: {fileID: 0}
+    - target: {fileID: 2927303341973138276, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
+      propertyPath: m_TagString
+      value: mainhouse
+      objectReference: {fileID: 0}
     - target: {fileID: 4258453820119213886, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -10928,7 +10932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb23ba95adcccf438986490911f493b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 30000
+  money: 12000
   workers: []
   dailyCostWages: 0
   structures: []
