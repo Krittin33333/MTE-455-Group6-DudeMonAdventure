@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MapTest.unity
+    path: Assets/Scenes/Test/MapTest.unity
     guid: f9af5b854c5d87847acf86c5bad26b7d
   - enabled: 1
     path: Assets/Scenes/Turnbase.unity

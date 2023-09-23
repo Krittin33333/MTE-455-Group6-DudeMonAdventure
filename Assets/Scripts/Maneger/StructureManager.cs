@@ -204,11 +204,16 @@ public class StructureManager : MonoBehaviour
 
         //if we left click something
         if (Physics.Raycast(ray, out hit, 1000))
-        {
-            //Mouse over UI
-            if (EventSystem.current.IsPointerOverGameObject() == false)
-                return;
 
+        {
+            
+            //Mouse over UI
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+
+            
             CurStructure = hit.collider.gameObject;
 
             switch (hit.collider.tag)
@@ -216,7 +221,6 @@ public class StructureManager : MonoBehaviour
                 case "Farm": // if we click Object with Farm tag 
                     OpenFarmPanel();
                     break;
-
             }
         }
     }
