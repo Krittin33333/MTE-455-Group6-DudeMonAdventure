@@ -39,12 +39,14 @@ public class Worker : Unit
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckStaffState();
+        
     }
 
     protected void CheckStaffState()
@@ -108,5 +110,39 @@ public class Worker : Unit
             }
         }
     }
+
+    /*private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject != targetStructure)
+        {
+            return;
+        }
+
+        Farm farm = other.gameObject.GetComponent<Farm>();
+
+        if ((farm != null) && (farm.HP < 100))
+        {
+            switch (farm.Stage)
+            {
+                case FarmStage.seedState:
+                    state = UnitState.Walk;
+                    farm.CheckTimeForWork();
+                    break;
+                case FarmStage.seedlingsState:
+                    state = UnitState.Walk;
+                    farm.CheckTimeForWork();
+                    break;
+                case FarmStage.growState:
+                    state = UnitState.Walk;
+                    farm.CheckTimeForWork();
+                    break;
+                case FarmStage.harvesState:
+                    state = UnitState.Walk;
+                    farm.CheckTimeForWork();
+                    break;
+            }
+        }
+    }*/
+
 
 }

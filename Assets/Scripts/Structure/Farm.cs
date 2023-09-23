@@ -18,8 +18,8 @@ public class Farm : Structure
     [SerializeField] private int maxStaffNum = 3;
     public int MaxStaffNum { get { return maxStaffNum; } set { maxStaffNum = value; } }
 
-    [SerializeField] private int dayRequired; //Day until harvest
-    [SerializeField] private int dayPassed; //Day passed since last harvest
+    [SerializeField] private int timeRequired; //Day until harvest
+    [SerializeField] private int timePassed; //Day passed since last harvest
 
     private float WorkTimer = 0f;
     private float WorkTimeWait = 1f;
@@ -41,6 +41,7 @@ public class Farm : Structure
         CheckSowing();
         CheckMaintaining();
         CheckHarvesting();
+        CheckTimeForWork();
     }
 
     public void CheckPlowing()
@@ -49,8 +50,8 @@ public class Farm : Structure
         {
             stage = FarmStage.seedlingsState;
             hp = 1;
-            ChangeStage(0);
-            Debug.Log(1);
+            //ChangeStage(0);
+            
         }
     }
 
@@ -61,7 +62,7 @@ public class Farm : Structure
             functional = true; //Plant will auto grow
             stage = FarmStage.growState;
             hp = 1;
-            ChangeStage(1);
+           // ChangeStage(1);
         }
     }
 
@@ -70,14 +71,14 @@ public class Farm : Structure
         if ((hp >= 100) && (stage == FarmStage.growState))
         {
             produceTimer += Time.deltaTime;
-            dayPassed = Mathf.CeilToInt(produceTimer / secondsPerDay);
+            timePassed = Mathf.CeilToInt(produceTimer / secondsPerDay);
 
-            if ((functional == true) && (dayPassed >= dayRequired))
+            if ((functional == true) && (timePassed >= timeRequired))
             {
                 produceTimer = 0;
                 stage = FarmStage.harvesState;
                 hp = 1;
-                ChangeStage(2);
+               // ChangeStage(2);
             }
         }
     }
@@ -86,13 +87,14 @@ public class Farm : Structure
     {
         if ((hp >= 100) && (stage == FarmStage.harvesState))
         {
-            ChangeStage(3);
-            //harvest
-            //   HarvestResult();
-            // Debug.Log("Harvest +1000");
-
+            HarvestResult();
+            Debug.Log("CheckHarvestResult!!");
+            Debug.Log(stage);
+            // ChangeStage(3);
             hp = 1;
             stage = FarmStage.seedState;
+            
+
         }
     }
 
@@ -103,51 +105,39 @@ public class Farm : Structure
 
     private void Working()
     {
-        hp += 3;
+        hp += 20;
     }
 
     public void CheckTimeForWork()
     {
         WorkTimer += Time.deltaTime;
 
-        if (WorkTimer >= WorkTimeWait)
+        if (WorkTimer >= WorkTimeWait && hp <= 110)
         {
             WorkTimer = 0;
             Working();
         }
     }
 
-    public void DisableAllStage()
-    {
-        for (int i = 0; i < Stages.Length; i++)
-            Stages[i].SetActive(false);
-        // Debug.Log(1);
-    }
 
-    private void ChangeStage(int i)
-    {
-        DisableAllStage();
-        Stages[i].SetActive(true);
-    }
-
-    /* public void HarvestResult()
+    /* public void DisableAllStage()
      {
-         switch (structureType)
-         {
-             case StructureType.wheat:
-                 {
-                     Office.instance.Wheat += 1000;
-                     break;
-                 }
-             case StructureType.melon:
-                 {
-                     Office.instance.Melon += 1200;
-                     break;
-                 }
-         }
-
-         MainUI.instance.UpdateResourceUI();
+         for (int i = 0; i < Stages.Length; i++)
+             Stages[i].SetActive(false);
+         // Debug.Log(1);
      }*/
+
+    /* private void ChangeStage(int i)
+     {
+         DisableAllStage();
+         Stages[i].SetActive(true);
+     }*/
+
+     public void HarvestResult()
+     {
+         Office.instance.Money += 100000;
+        MainUI.instance.UpdateResourceUI();
+     }
 
 
 

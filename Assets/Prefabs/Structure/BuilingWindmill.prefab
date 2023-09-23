@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 8877116283556667701}
   - component: {fileID: 504267539995664626}
   - component: {fileID: 231495571775702361}
-  - component: {fileID: 6716933552918206385}
   - component: {fileID: 4123228767165487133}
   m_Layer: 0
   m_Name: BuilingWindmill
@@ -165,36 +164,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &6716933552918206385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5431777067236588483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9360f69d0797d448075d01a7a231c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  structureType: 1
-  functional: 0
-  structureName: Barn
-  costToBuild: 2500
-  id: 11
-  hp: 0
-  stage: 0
-  maxStaffNum: 3
-  dayRequired: 0
-  dayPassed: 0
-  produceTimer: 0
-  FarmUI: {fileID: 0}
-  currentWorkers: []
-  Stages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!65 &4123228767165487133
 BoxCollider:
   m_ObjectHideFlags: 0

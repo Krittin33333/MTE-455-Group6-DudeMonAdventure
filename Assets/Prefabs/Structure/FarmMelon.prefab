@@ -185,8 +185,8 @@ MonoBehaviour:
   hp: 0
   stage: 0
   maxStaffNum: 3
-  dayRequired: 15
-  dayPassed: 0
+  timeRequired: 7
+  timePassed: 0
   produceTimer: 0
   FarmUI: {fileID: 0}
   currentWorkers: []
