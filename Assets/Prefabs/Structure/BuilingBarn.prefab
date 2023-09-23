@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1975775560787054654}
   m_Layer: 0
   m_Name: BuilingBarn
-  m_TagString: Farm
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3667612a37be9f418a40f42c796dfe8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.62798035
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3667612a37be9f418a40f42c796dfe8, type: 3}
       propertyPath: m_LocalPosition.y

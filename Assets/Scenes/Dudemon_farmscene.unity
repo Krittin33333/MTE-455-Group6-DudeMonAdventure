@@ -6514,6 +6514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1611586632}
     m_Modifications:
+    - target: {fileID: -6083228966425002015, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
+      propertyPath: structureType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1022760710107203907, guid: 5ab0a814f4445bf46811575cb2a1446f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10932,7 +10936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb23ba95adcccf438986490911f493b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 12000
+  money: 20000
   workers: []
   dailyCostWages: 0
   structures: []
@@ -20372,7 +20376,7 @@ Transform:
   m_GameObject: {fileID: 2075772123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 3.05545, y: 3.05545, z: 3.05545}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 725187212}
