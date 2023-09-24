@@ -5,42 +5,27 @@ using UnityEngine;
 
 public class Walk : MonoBehaviour
 {
-    public CharacterController controller;
-    public float speed = 6.0f;
-    public bool isWalk = false;
-    public bool isIdle = true;
+    [SerializeField] private float moveSpeed;
 
-    public Animator Anime;
+    // Start is called before the first frame update
+    void Start()
+    {
 
+    }
 
+    // Update is called once per frame
     void Update()
     {
-        Run();
-        AnimePlayer();
+        Walking();
     }
-    public void Run()
+    public void Walking()
+
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float xInput = Input.GetAxis("Horizontal");
+        float zInput = Input.GetAxis("Vertical");
 
-        Vector3 inputDirection = new Vector3(horizontalInput, 0.0f, verticalInput);
-        Vector3 moveDirection = transform.TransformDirection(inputDirection);
-        moveDirection.y = 0.0f; // Ensure the player doesn't move vertically.
+        Vector3 wal = transform.forward * zInput + transform.right * xInput;
+        transform.position += wal * moveSpeed * Time.deltaTime;
 
-        controller.SimpleMove(moveDirection * speed);
-        isWalk = (Input.GetAxisRaw("Horizontal") != 0);
-        isIdle = (Input.GetAxisRaw("Horizontal") == 0);
-    }
-
-    private void AnimePlayer()
-    {
-        if (isIdle)
-        {
-            Anime.SetBool("isIdle", isIdle);
-        }
-        else if (isWalk) { 
-            Anime.SetBool("isWalk", isWalk);
-        }
-        
     }
 }
