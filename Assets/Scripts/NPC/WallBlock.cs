@@ -10,7 +10,7 @@ public class WallBlock : MonoBehaviour
     public GameObject DialogPanel;
     public Dialog Dialog;
     
-    bool player_detection = false;
+   // bool player_detection = false;
    
     void Update()
     {
@@ -23,7 +23,7 @@ public class WallBlock : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            player_detection = true;
+           // player_detection = true;
             Debug.Log("F Open");
             TriggerDialog();
             DialogOn();
@@ -32,7 +32,7 @@ public class WallBlock : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        player_detection = false;
+       // player_detection = false;
         Debug.Log("F Off");
         DialogOff();
     }

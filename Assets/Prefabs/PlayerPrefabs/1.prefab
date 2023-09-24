@@ -333,7 +333,7 @@ MonoBehaviour:
   controller: {fileID: 6706272356847734518}
   speed: 6
   isWalk: 0
-  isIdle: 1
+  _rotate: {fileID: 4868767320770091719}
   Anime: {fileID: 9046282603815830009}
 --- !u!1001 &2577699038154063202
 PrefabInstance:
@@ -392,6 +392,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0a74c9261c7b6b47acba1f0374d27a7, type: 3}
+--- !u!1 &4868767320770091719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6941319758461659045, guid: a0a74c9261c7b6b47acba1f0374d27a7, type: 3}
+  m_PrefabInstance: {fileID: 2577699038154063202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7868549998684453815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5690130002217354965, guid: a0a74c9261c7b6b47acba1f0374d27a7, type: 3}
