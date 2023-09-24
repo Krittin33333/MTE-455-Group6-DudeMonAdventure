@@ -1,7 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using TMPro;
 
 public enum BattleState { START , PLAYERTURN , ENEMYTURN , WON ,LOST }
 public class BattleSystem : MonoBehaviour
@@ -9,15 +12,21 @@ public class BattleSystem : MonoBehaviour
     public BattleState state;
     public GameObject PlayerPrefabs;
     public GameObject EnemyPrefab;
+    public GameObject CommandPanel;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
+    public TextMeshProUGUI dialogueText;
+
     Unit playerUnit;
     Unit enemyUnit;
 
+
     public BattleHUD PlayerHUD;
     public BattleHUD EnemyHUD;
+    [SerializeField] string mapScene;
+    [SerializeField] string mapScenelost;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +41,9 @@ public class BattleSystem : MonoBehaviour
 
        GameObject enemyGo = Instantiate(EnemyPrefab , enemyBattleStation);
         enemyUnit = enemyGo.GetComponent<Unit>();
+
+        dialogueText.text = enemyUnit.UnitName + " ป่าเข้าจู่โจม!!!";
+
 
         PlayerHUD.setHUD(playerUnit);
         EnemyHUD.setHUD(enemyUnit);
@@ -48,13 +60,16 @@ public class BattleSystem : MonoBehaviour
        bool isDead = enemyUnit.TakeDamage(playerUnit.Damage);
 
         EnemyHUD.SetHP(enemyUnit.CurrentHP);
-
-        yield return new WaitForSeconds(1f);
+        dialogueText.text = "โจมตีสำเร็จ";
+        CommandOff();
+        yield return new WaitForSeconds(0.5f);
 
         if (isDead )
         {
             state = BattleState.WON;
             EndBattle();
+            yield return new WaitForSeconds(2.5f);
+            switchscene();
         }
         else
         {
@@ -62,20 +77,74 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(EnemyTurn());
         }
     }
+    IEnumerator PlayerAttack2()
+    {
+        bool isDead = enemyUnit.TakeDamage2(playerUnit.Damage2);
+
+        EnemyHUD.SetHP(enemyUnit.CurrentHP);
+        dialogueText.text = "โจมตีสำเร็จ";
+        CommandOff();
+        yield return new WaitForSeconds(0.5f);
+
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+            yield return new WaitForSeconds(2.5f);
+            switchscene();
+        }
+        else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
+    IEnumerator PlayerAttack3()
+    {
+        bool isDead = enemyUnit.TakeDamage3(playerUnit.Damage3);
+
+        EnemyHUD.SetHP(enemyUnit.CurrentHP);
+        dialogueText.text = "โจมตีสำเร็จ";
+        CommandOff();
+        yield return new WaitForSeconds(0.5f);
+
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+            yield return new WaitForSeconds(2.5f);
+            switchscene();
+        }
+        else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
     IEnumerator EnemyTurn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.Damage);
 
+        CommandOff();
+
         PlayerHUD.SetHP(playerUnit.CurrentHP);
 
-        yield return new WaitForSeconds(1f);
+        dialogueText.text = enemyUnit.UnitName + " ตี Dudemon ของคุณ";
+
+        yield return new WaitForSeconds(2f);
 
         if (isDead ) 
         {
             state = BattleState.LOST;
-            EndBattle();
+            
+            EndBattleLost();
+            yield return new WaitForSeconds(2.5f);
+            switchscenelost();
+
         }
         else
         {
@@ -87,10 +156,51 @@ public class BattleSystem : MonoBehaviour
     void EndBattle()
     {
 
+        if (state == BattleState.WON)
+        {
+            dialogueText.text = "Dudemon ของคุณเอาชนะ " + enemyUnit.UnitName;
+        }
+
+    }
+
+    public void switchscene()
+    {
+        SceneManager.LoadScene(mapScene);
+    }
+    void EndBattleLost()
+    {
+
+        if (state == BattleState.LOST)
+        {
+            dialogueText.text = "Dudemon ของคุณแพ้ " + enemyUnit.UnitName;
+        }
+
+    }
+    public void switchscenelost()
+    {
+        SceneManager.LoadScene(mapScenelost);
     }
 
     public void PlayerTurn()
     {
+        CommandOn();
+        dialogueText.text = "เลือกท่าโจมตี";
+    }
+    IEnumerator PlayerHeal()
+    {
+        playerUnit.Heal(2);
+        CommandOff();
+        PlayerHUD.SetHP(playerUnit.CurrentHP);
+        dialogueText.text = "รักษา";
+
+        //dialog
+
+        yield return new WaitForSeconds(1f);
+
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+
+
 
     }
     public void OnAttackButton()
@@ -100,5 +210,46 @@ public class BattleSystem : MonoBehaviour
 
         StartCoroutine (PlayerAttack());
     }
+    public void OnPunchButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
 
+        StartCoroutine(PlayerAttack2());
+        
+    }
+
+    public void OnBiteButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        StartCoroutine(PlayerAttack3());
+
+    }
+
+    public void OnHealButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        StartCoroutine(PlayerHeal());
+        Debug.Log("HeeeHeee");
+    }
+    public void CommandOn()
+    {
+        if (CommandPanel.activeSelf != true)
+        {
+            CommandPanel.SetActive(true);
+        }
+
+    }
+    public void CommandOff()
+    {
+        if (CommandPanel.activeSelf != false)
+        {
+            CommandPanel.SetActive(false);
+        }
+
+    }
 }
