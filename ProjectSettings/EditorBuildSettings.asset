@@ -9,17 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Dudemon_farmscene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Turnbase.unity
-    guid: b782db694531f7a4cbf272286ce2e0f7
-  - enabled: 1
     path: Assets/Scenes/Maps_Forest.unity
-    guid: 2e9735ca856d802498749da1a169e74d
+    guid: 6044a7ffeef33a24188bb222be0f3cef
   - enabled: 1
     path: Assets/Scenes/Maps_Mountain.unity
-    guid: 86ab56e6fec4a104098265b474e1cbf7
+    guid: 167f53303942d884f9e49461454af8b7
   - enabled: 1
     path: Assets/Scenes/Maps_Village.unity
-    guid: 2194206e5f3ace148abb6eabe93ef349
+    guid: 9e9a022731060ab47aef2791ede92554
+  - enabled: 1
+    path: Assets/Scenes/Turnbase.unity
+    guid: b782db694531f7a4cbf272286ce2e0f7
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 3d5dfa88998d466419dabb917c624c09

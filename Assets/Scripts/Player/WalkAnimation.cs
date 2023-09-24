@@ -10,8 +10,12 @@ public class WalkAnimation : MonoBehaviour
     public bool isWalk = false;
     public bool isIdle = true;
 
-    public Animator Anime;
+    private Animator Anime;
 
+    private void Awake()
+    {
+        Anime = GetComponent<Animator>();
+    }
 
     void Update()
     {
