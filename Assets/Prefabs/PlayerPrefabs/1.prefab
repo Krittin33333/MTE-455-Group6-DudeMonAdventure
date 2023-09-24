@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 8882846568989306250}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,6 @@ GameObject:
   - component: {fileID: 7438548966077231812}
   - component: {fileID: 5385259470909301941}
   - component: {fileID: 8531008306238618265}
-  - component: {fileID: 6706272356847734518}
   - component: {fileID: 795762039824529425}
   m_Layer: 0
   m_Name: Player_Main
@@ -300,24 +299,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!143 &6706272356847734518
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804083966003602783}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 0.64
-  m_Radius: 0.2
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &795762039824529425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,9 +311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f3174803b668d4db22e29218cc24b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 6706272356847734518}
+  controller: {fileID: 0}
   speed: 6
   isWalk: 0
+  isIdle: 1
   _rotate: {fileID: 4868767320770091719}
   Anime: {fileID: 9046282603815830009}
 --- !u!1001 &2577699038154063202
