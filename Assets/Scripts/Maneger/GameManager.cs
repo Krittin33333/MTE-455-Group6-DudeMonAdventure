@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+       // DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
