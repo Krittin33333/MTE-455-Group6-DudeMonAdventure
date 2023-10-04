@@ -2382,7 +2382,7 @@ PrefabInstance:
     - target: {fileID: 795762039824529425, guid: 3af763b555b26f74cb0076af0a9fb00a, type: 3}
       propertyPath: _rotate
       value: 
-      objectReference: {fileID: 1436141352}
+      objectReference: {fileID: 1350768743}
     - target: {fileID: 3223836950935208224, guid: 3af763b555b26f74cb0076af0a9fb00a, type: 3}
       propertyPath: m_Name
       value: PlayerMain
@@ -12887,6 +12887,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
   m_PrefabInstance: {fileID: 639100956242843673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1350768743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7719548397059127055, guid: 3af763b555b26f74cb0076af0a9fb00a, type: 3}
+  m_PrefabInstance: {fileID: 292389356}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1371802582
 PrefabInstance:
