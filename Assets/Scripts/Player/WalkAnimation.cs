@@ -6,33 +6,21 @@ using UnityEngine.EventSystems;
 
 public class WalkAnimation : MonoBehaviour
 {
-    [SerializeField] private CharacterController controller;
+
+
+    [Header("References")]
+    public Transform orientation;
+    public Transform playerObj;
     [SerializeField] private float speed = 6.0f;
     [SerializeField] private bool isWalk = false;
     [SerializeField] private bool isIdle = true;
-    public GameObject _rotate;
 
-    Vector3 lastPos;
+    public float rotationSpeed;
+
     [SerializeField] private Animator Anime;
 
-    private void Awake()
+    private void Update()
     {
-      //  Anime = GetComponent<Animator>();
-        controller = GetComponent<CharacterController>();
-    }
-
-    void Update()
-    {
-        Walk();
-    }
-    public void Walk()
-    {
-        //Movement
-   //     float x = Input.GetAxis("Horizontal");
-    //    float z = Input.GetAxis("Vertical");
-    //    Vector3 move = transform.right * x + transform.forward * z;
-    //    controller.Move(move * speed * Time.deltaTime);
-
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -40,43 +28,19 @@ public class WalkAnimation : MonoBehaviour
         Vector3 moveDirection = new Vector3(horizontalInput, 0.0f, verticalInput);
         transform.Translate(moveDirection * speed * Time.deltaTime);
 
-        if (Input.GetAxis("Horizontal") != 0)
-        {
+        //  float horizontalInput = Input.GetAxis("Horizontal");
+        //     float verticalInput = Input.GetAxis("Vertical");
+        Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        }
-
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-
-            _rotate.transform.rotation = Quaternion.Euler(0, -90, 0);
-
-
-        }
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-
-            _rotate.transform.rotation = Quaternion.Euler(0, 90, 0);
-
-
-        }
-        if (Input.GetAxis("Vertical") > 0)
-        {
-
-            _rotate.transform.rotation = Quaternion.Euler(0, 0, 0);
-
-
-        }
-        if (Input.GetAxis("Vertical") < 0)
-        {
-
-            _rotate.transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-
+        if (inputDir != Vector3.zero)
+            playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
 
         isWalk = moveDirection.magnitude > 0.01f;
         Anime.SetBool("isWalk", isWalk);
         isIdle = moveDirection.magnitude < 0.01f;
         Anime.SetBool("isIdle", isIdle);
+
     }
+
 
 }
