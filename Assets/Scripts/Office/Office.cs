@@ -34,7 +34,18 @@ public class Office : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        //instance = this;
+        if (instance == null)
+        {
+            // If there's no instance, this is the first one, so don't destroy it.
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // If an instance already exists, destroy this one.
+            Destroy(gameObject);
+        }
     }
 
     public void AddBuilding(Structure s)
