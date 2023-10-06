@@ -17,23 +17,35 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
+    public Vector3 targetPosition = new Vector3(3.48f, 62.32802f, 7.39f);
+    public Vector3 targetRotation = new Vector3(0f, 224.791f, 0f);
+
     public TextMeshProUGUI dialogueText;
 
     Unit playerUnit;
     Unit enemyUnit;
-
 
     public BattleHUD PlayerHUD;
     public BattleHUD EnemyHUD;
     [SerializeField] string mapScene;
     [SerializeField] string mapScenelost;
 
-    // Start is called before the first frame update
+    public static BattleSystem instance;
+
+    private void Awake()
+    {
+        instance = this;
+        EnemyPrefab = Office.instance.Enemyhitted;
+        Destroy(Office.instance.Enemyhitted);
+    }
+
     void Start()
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
+
+
     IEnumerator SetupBattle()
     {
         GameObject playerGo =  Instantiate(PlayerPrefabs , playerBattleStation);
@@ -41,6 +53,9 @@ public class BattleSystem : MonoBehaviour
 
         GameObject enemyGo = Instantiate(EnemyPrefab , enemyBattleStation);
         enemyUnit = enemyGo.GetComponent<Unit>();
+
+        enemyUnit.transform.position = targetPosition;
+        enemyUnit.transform.eulerAngles = targetRotation;
 
         dialogueText.text = enemyUnit.UnitName + " ป่าเข้าจู่โจม!!!";
 
@@ -52,7 +67,8 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
-
+        
+        
     }
 
     IEnumerator PlayerAttack()
@@ -65,7 +81,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         if (isDead )
-        {
+        {   
             state = BattleState.WON;
             EndBattle();
             yield return new WaitForSeconds(2.5f);

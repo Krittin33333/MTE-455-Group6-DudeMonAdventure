@@ -9,21 +9,40 @@ public class SwitchScene : MonoBehaviour
     [SerializeField] string mapScene;
     public GameObject LoadingScene;
 
+    [SerializeField] private GameObject dudemonPrefab;
+    public GameObject DudemonPrefab { get { return dudemonPrefab; } }
+    
     private void Awake()
     {
+        if (LoadingScene != null)
         LoadingStart();
+        
     }
 
     private IEnumerator OnTriggerEnter(Collider other)
     {
-
+        if (LoadingScene != null)
+        {
+            
+        
         print("Trigger Enter");
 
         if (other.tag == "Player")
         {
+            if (mapScene == "Turnbase")
+            {
+                Office.instance.Setlevelenemy(DudemonPrefab);
+                Loading();
+                yield return new WaitForSeconds(2f);
+                SceneManager.LoadScene(mapScene);
+                
+            }
+            else { 
             Loading();
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(mapScene);
+            }
+        }
         }
     }
 

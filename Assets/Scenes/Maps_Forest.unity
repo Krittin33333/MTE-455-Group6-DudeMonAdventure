@@ -4897,6 +4897,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1396422480}
+    - target: {fileID: 1027183495603762379, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
+      propertyPath: LoadingScene
+      value: 
+      objectReference: {fileID: 1710365410}
     - target: {fileID: 1581820823963369709, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -6251,6 +6255,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1396422480}
+    - target: {fileID: 1027183495603762379, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
+      propertyPath: LoadingScene
+      value: 
+      objectReference: {fileID: 1710365410}
     - target: {fileID: 1581820823963369709, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -13782,6 +13790,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1396422480}
+    - target: {fileID: 1027183495603762379, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
+      propertyPath: LoadingScene
+      value: 
+      objectReference: {fileID: 1710365410}
     - target: {fileID: 1581820823963369709, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -20016,6 +20028,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1396422480}
+    - target: {fileID: 1027183495603762379, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
+      propertyPath: LoadingScene
+      value: 
+      objectReference: {fileID: 1710365410}
     - target: {fileID: 1581820823963369709, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
       propertyPath: m_RootOrder
       value: 13

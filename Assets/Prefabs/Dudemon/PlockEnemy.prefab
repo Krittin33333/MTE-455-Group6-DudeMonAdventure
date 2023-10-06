@@ -301,6 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapScene: Turnbase
   LoadingScene: {fileID: 5562749750707352610, guid: b1c4907f3ae38cf49a506382b8351334, type: 3}
+  dudemonPrefab: {fileID: 8239481733719546058}
 --- !u!114 &1856409494364826946
 MonoBehaviour:
   m_ObjectHideFlags: 0

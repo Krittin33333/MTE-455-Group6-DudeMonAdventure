@@ -39,7 +39,7 @@ public class Office : MonoBehaviour
 
     public static Office instance;
 
-
+    
 
     private void Awake()
     {
@@ -55,6 +55,7 @@ public class Office : MonoBehaviour
             // If an instance already exists, destroy this one.
             Destroy(gameObject);
         }
+
     }
 
     public void AddBuilding(Structure s)
@@ -78,5 +79,6 @@ public class Office : MonoBehaviour
 
         Enemyhitted = UnitObj;
         Levelenemy = U.UnitLevel;
+        //BattleSystem.instance.SetPrefapsenemy(UnitObj);
     }
 }
