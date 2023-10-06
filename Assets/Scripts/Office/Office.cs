@@ -68,4 +68,15 @@ public class Office : MonoBehaviour
         Destroy(s.gameObject);
     }
 
+    public void Setlevelenemy(GameObject UnitObj)
+    {
+        Unit U = UnitObj.GetComponent<Unit>();
+        
+        EnemyController.instance.player = null;
+
+        U.transform.parent = staffParent.transform;
+
+        Enemyhitted = UnitObj;
+        Levelenemy = U.UnitLevel;
+    }
 }

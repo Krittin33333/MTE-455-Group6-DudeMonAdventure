@@ -8,6 +8,8 @@ public class SwitchScene : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] string mapScene;
 
+    [SerializeField] private GameObject dudemonPrefab;
+    public GameObject DudemonPrefab { get { return dudemonPrefab; } }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,15 +17,13 @@ public class SwitchScene : MonoBehaviour
 
         if (other.tag == "Player")
         {
-
-            Setlevelenemy();
+            if (mapScene == "Turnbase") { 
+                 Office.instance.Setlevelenemy(DudemonPrefab);
+                SceneManager.LoadScene(mapScene);
+            }
             SceneManager.LoadScene(mapScene);
         }
     }
 
-    public void Setlevelenemy()
-    {
-        Office.instance.Enemyhitted = LevelUI.instance.WorkerPrefab;
-        Office.instance.Levelenemy = LevelUI.instance.Levelenemy;
-    }
+
 }

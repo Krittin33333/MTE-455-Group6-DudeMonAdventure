@@ -11,8 +11,8 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private int ievelenemy;
     public int Levelenemy { get { return ievelenemy; } set { ievelenemy = value; } }
 
-    [SerializeField] private int nameenemy;
-    public int Nameenemy { get { return nameenemy; } set { nameenemy = value; } }
+    [SerializeField] private GameObject enemyPrefab;
+    public GameObject EnemyPrefab { get { return enemyPrefab; } }
 
     [SerializeField] private TMP_Text LevelText;
 
@@ -27,8 +27,8 @@ public class LevelUI : MonoBehaviour
     {
          Unit U = UnitObj.GetComponent<Unit>();
 
-        
-        Levelenemy = U.UnitLevel;
+         enemyPrefab = UnitObj;
+         Levelenemy = U.UnitLevel;
          LevelText.text = ("Lv. "+Levelenemy);
     }
 

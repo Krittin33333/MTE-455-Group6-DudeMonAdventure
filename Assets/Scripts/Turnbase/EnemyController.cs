@@ -13,22 +13,30 @@ public class EnemyController : MonoBehaviour
     public float maxFollowDistance ;
     public float DistanceToStop ;
 
+    public static EnemyController instance;
 
     Animator enmeyAnimator;
 
    private void Awake()
     {
+        instance = this;
         navMesh = GetComponent<NavMeshAgent>();
         enmeyAnimator = GetComponent<Animator>();
     }
     private void Update()
     {
-        Seeking();
+        if (player != null)
+        {
+            Seeking();
+        }
     }
     void Seeking()
-    {
+    {   
+
+
         distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance > DistanceToStop && distance < maxFollowDistance) // ระยะการมองเห็น
+        
+        if(distance > DistanceToStop && distance < maxFollowDistance) // ระยะการมองเห็น
         {
             navMesh.SetDestination(player.transform.position);
             
