@@ -4881,6 +4881,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7308552969621991743, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
+      propertyPath: unitLevel
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: -4846440390769943311, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
       propertyPath: player
       value: 

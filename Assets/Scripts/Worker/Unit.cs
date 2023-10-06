@@ -42,10 +42,13 @@ public class Unit : MonoBehaviour
     private int HPbase = 33;
     private int Atkbase = 6;
 
+    public static Unit instance;
+
     void Awake()
     {
         SetStausHP();
         SetAttack();
+        instance = this;
     }
 
     public bool TakeDamage(int damage)
