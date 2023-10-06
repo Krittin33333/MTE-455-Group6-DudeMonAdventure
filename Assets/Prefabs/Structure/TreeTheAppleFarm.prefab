@@ -181,11 +181,12 @@ MonoBehaviour:
   functional: 0
   structureName: Apple Tree
   costToBuild: 15000
+  incomepermins: 3000
   id: 8
   hp: 0
   stage: 0
   maxStaffNum: 3
-  timeRequired: 30
+  timeRequired: 2
   timePassed: 0
   produceTimer: 0
   FarmUI: {fileID: 0}

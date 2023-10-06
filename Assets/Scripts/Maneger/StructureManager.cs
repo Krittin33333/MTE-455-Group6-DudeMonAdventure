@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SocialPlatforms;
 
 public class StructureManager : MonoBehaviour
 {
@@ -92,15 +93,17 @@ public class StructureManager : MonoBehaviour
             return false;
     }
 
-    private void DeductMoney(int cost)
+    private void DeductMoney(int cost,int income)
     {
         Office.instance.Money -= cost;
+        Office.instance.Income += income;
         MainUI.instance.UpdateResourceUI();
     }
 
-    private void SellBack(int cost)
+    private void SellBack(int cost, int income)
     {
         Office.instance.Money += cost;
+        Office.instance.Income -= income;
         MainUI.instance.UpdateResourceUI();
     }
 
@@ -119,7 +122,7 @@ public class StructureManager : MonoBehaviour
         //Add building in Office
         Office.instance.AddBuilding(s);
         //Deduct Money
-        DeductMoney(s.CostToBuild);
+        DeductMoney(s.CostToBuild,s.Incomepermins);
         //cancel buile
         if (CheckMoney(structureObj) == false)
             CancelStructureMode();
@@ -161,7 +164,7 @@ public class StructureManager : MonoBehaviour
         {
             Debug.Log(0);
             Office.instance.RemoveBuilding(s);
-            SellBack(s.CostToBuild);
+            SellBack(s.CostToBuild,s.Incomepermins);
         }
 
      /*   Structure s = Office.instance.Structures.Find(x => x.CompareTag("Farm"));

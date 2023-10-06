@@ -181,6 +181,7 @@ MonoBehaviour:
   functional: 0
   structureName: Carrot Farm
   costToBuild: 250
+  incomepermins: 25
   id: 0
   hp: 0
   stage: 0

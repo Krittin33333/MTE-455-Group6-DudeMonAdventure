@@ -32,12 +32,16 @@ public abstract class Structure : MonoBehaviour
     [SerializeField] protected int costToBuild;
     public int CostToBuild { get { return costToBuild; } }
 
+    [SerializeField] protected int incomepermins;
+    public int Incomepermins { get { return incomepermins; } }
+
     [SerializeField] protected int id;
     public int ID { get { return id; } set { id = value; } }
 
     [SerializeField] protected int hp;
     public int HP { get { return hp; } set { hp = value; } }
 
+    public static Structure instance;
 
     // Start is called before the first frame update
     void Start()

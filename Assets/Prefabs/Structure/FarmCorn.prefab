@@ -181,11 +181,12 @@ MonoBehaviour:
   functional: 0
   structureName: Corn Farm
   costToBuild: 315
+  incomepermins: 47
   id: 1
   hp: 0
   stage: 0
   maxStaffNum: 3
-  timeRequired: 5
+  timeRequired: 1
   timePassed: 0
   produceTimer: 0
   FarmUI: {fileID: 0}

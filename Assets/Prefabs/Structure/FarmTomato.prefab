@@ -181,11 +181,12 @@ MonoBehaviour:
   functional: 0
   structureName: Tomato Farm
   costToBuild: 1000
+  incomepermins: 300
   id: 3
   hp: 0
   stage: 0
   maxStaffNum: 3
-  timeRequired: 10
+  timeRequired: 1
   timePassed: 0
   produceTimer: 0
   FarmUI: {fileID: 0}
