@@ -130,6 +130,8 @@ MonoBehaviour:
   unitName: Monster
   unitLevel: 50
   damage: 1
+  damage2: 0
+  damage3: 0
   maxHP: 60
   currentHP: 60
   targetStructure: {fileID: 0}

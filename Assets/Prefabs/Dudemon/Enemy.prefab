@@ -114,5 +114,9 @@ MonoBehaviour:
   unitName: "Capsule\u304F\u3093"
   unitLevel: 5
   damage: 3
+  damage2: 0
+  damage3: 0
   maxHP: 15
   currentHP: 15
+  targetStructure: {fileID: 0}
+  state: 0

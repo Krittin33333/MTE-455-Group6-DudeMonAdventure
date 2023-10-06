@@ -69,6 +69,8 @@ MonoBehaviour:
   unitName: Plock
   unitLevel: 20
   damage: 10
+  damage2: 0
+  damage3: 0
   maxHP: 30
   currentHP: 30
   targetStructure: {fileID: 0}
@@ -88,6 +90,8 @@ MonoBehaviour:
   unitName: 
   unitLevel: 1
   damage: 3
+  damage2: 0
+  damage3: 0
   maxHP: 5
   currentHP: 5
   targetStructure: {fileID: 0}
