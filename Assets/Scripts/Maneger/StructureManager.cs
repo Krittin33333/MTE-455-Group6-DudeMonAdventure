@@ -225,10 +225,5 @@ public class StructureManager : MonoBehaviour
         }
     }
 
-    public void CallStaff()
-    {
-        Debug.Log("Call");
-        Office.instance.SendStaff(CurStructure);
-        MainUI.instance.UpdateResourceUI();
-    }
+ 
 }

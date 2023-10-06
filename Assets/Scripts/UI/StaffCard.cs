@@ -41,7 +41,7 @@ public class StaffCard : MonoBehaviour
         candidateName.text = s;
     }
 
-    public void Hire()
+  /*  public void Hire()
     {
         bool hired = Office.instance.ToHireStaff(LaborMarket.instance.LaborInMarket[id]);
 
@@ -61,5 +61,5 @@ public class StaffCard : MonoBehaviour
             HireButton.gameObject.SetActive(true);
             FireButton.gameObject.SetActive(false);
         }
-    }
+    }*/
 }

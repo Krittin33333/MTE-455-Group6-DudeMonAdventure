@@ -8,6 +8,9 @@ public class Office : MonoBehaviour
     [SerializeField] private int money;
     public int Money { get { return money; } set { money = value; } }
 
+    [SerializeField] private int income;
+    public int Income { get { return income; } set { income = value; } }
+
     [SerializeField] private List<Worker> workers = new List<Worker>();
     public List<Worker> Workers { get { return workers; } }
 
@@ -59,116 +62,4 @@ public class Office : MonoBehaviour
         Destroy(s.gameObject);
     }
 
- public bool ToHireStaff(GameObject workerObj)
-    {
-        if (money <= 0)
-            return false;
-
-        workerObj.transform.parent = staffParent.transform;
-
-        Worker w = workerObj.GetComponent<Worker>();
-
-        workerObj.SetActive(true);
-        w.Hired = true; //Hire this worker
-        w.ChangeCharSkin(); //Show 3D model
-        w.SetToWalk(rallyPosition.transform.position);
-
-        money -= w.DailyWage;
-        AddStaff(w);
-
-        //Update UI
-        MainUI.instance.UpdateResourceUI();
-
-        return true;
-    }
-
-    public bool ToFireStaff(GameObject staffObj)
-    {
-        staffObj.transform.parent = LaborMarket.instance.WorkerParent.transform;
-        //move Staff obj back to Labor Market
-
-
-
-        Worker w = staffObj.GetComponent<Worker>();
-        w.Hired = false; //Fire this staff
-
-        if (w.TargetStructure != null)
-        {
-            Farm f = w.TargetStructure.GetComponent<Farm>();
-            if (f != null)
-                f.CurrentWorkers.Remove(w); //Remove from this farm
-        }
-
-        w.TargetStructure = null; //Quit working
-        w.SetToWalk(spawnPosition.transform.position);
-
-        FireStaff(w);
-        MainUI.instance.UpdateResourceUI();
-
-        return true;
-    }
-        public void FireStaff(Worker w)
-    {
-        workers.Remove(w);
-        dailyCostWages -= w.DailyWage;
-    }
-        
-
-    public void AddStaff(Worker w)
-    {
-        workers.Add(w);
-        dailyCostWages += w.DailyWage;
-    }
-
-    private void DeductMoney(int cost)
-    {
-        Office.instance.Money -= cost;
-        MainUI.instance.UpdateResourceUI();
-    }
-
-    public void UpdateAvailStaff()
-    {
-        availStaff = 0;
-
-        foreach (Worker w in workers)
-        {
-            if (w.TargetStructure == null) //there is no job to do
-                availStaff++;
-        }
-    }
-
-    public void SendStaff(GameObject target)
-    {
-        Debug.Log(target);
-        Farm f = target.GetComponent<Farm>();
-        Debug.Log(f);
-        int staffNeed = f.MaxStaffNum - f.CurrentWorkers.Count;
-        if (staffNeed <= 0)
-            return;
-        
-        UpdateAvailStaff();
-
-        if (staffNeed > availStaff)
-            staffNeed = availStaff;
-
-        int n = 0; //number of Staff sent
-
-        for (int i = 0; i < workers.Count; i++)
-        {
-            if (workers[i].TargetStructure == null)
-            {
-                Worker w = workers[i].GetComponent<Worker>();
-
-                workers[i].TargetStructure = target;
-                workers[i].SetToWalk(target.transform.position);
-                f.AddStaffToFarm(w);
-                n++;
-            }
-
-            if (n >= staffNeed)
-                break;
-        }
-
-        UpdateAvailStaff();
-    }
 }
