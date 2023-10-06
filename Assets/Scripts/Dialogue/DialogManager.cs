@@ -11,6 +11,7 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI dialogText;
     // Start is called before the first frame update
     private Queue<string> sentences;
+    public AudioSource ClickSound;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class DialogManager : MonoBehaviour
             EndDialog();
             return;
         }
+        ClickSound.Play();
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
