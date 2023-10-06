@@ -11,6 +11,12 @@ public class Office : MonoBehaviour
     [SerializeField] private int income;
     public int Income { get { return income; } set { income = value; } }
 
+    [SerializeField] private int levelenemy;
+    public int Levelenemy { get { return levelenemy; } set { levelenemy = value; } }
+
+    [SerializeField] private GameObject enemyhitted;
+    public GameObject Enemyhitted { get { return enemyhitted; } set { enemyhitted = value; } }
+
     [SerializeField] private List<Worker> workers = new List<Worker>();
     public List<Worker> Workers { get { return workers; } }
 

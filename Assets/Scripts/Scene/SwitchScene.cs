@@ -15,7 +15,15 @@ public class SwitchScene : MonoBehaviour
 
         if (other.tag == "Player")
         {
+
+            Setlevelenemy();
             SceneManager.LoadScene(mapScene);
         }
+    }
+
+    public void Setlevelenemy()
+    {
+        Office.instance.Enemyhitted = LevelUI.instance.WorkerPrefab;
+        Office.instance.Levelenemy = LevelUI.instance.Levelenemy;
     }
 }

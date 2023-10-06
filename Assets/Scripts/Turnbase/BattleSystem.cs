@@ -39,7 +39,7 @@ public class BattleSystem : MonoBehaviour
         GameObject playerGo =  Instantiate(PlayerPrefabs , playerBattleStation);
         playerUnit = playerGo.GetComponent<Unit>();
 
-       GameObject enemyGo = Instantiate(EnemyPrefab , enemyBattleStation);
+        GameObject enemyGo = Instantiate(EnemyPrefab , enemyBattleStation);
         enemyUnit = enemyGo.GetComponent<Unit>();
 
         dialogueText.text = enemyUnit.UnitName + " ป่าเข้าจู่โจม!!!";
