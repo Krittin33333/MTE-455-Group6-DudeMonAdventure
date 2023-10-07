@@ -46,7 +46,6 @@ public class Office : MonoBehaviour
 
     private void Awake()
     {
-        //instance = this;
         if (instance == null)
         {
             // If there's no instance, this is the first one, so don't destroy it.

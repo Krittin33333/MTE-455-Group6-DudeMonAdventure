@@ -41,8 +41,13 @@ public class StructureManager : MonoBehaviour
         {
             CancelStructureMode();
         }
-
+        
         curCursorPos = Formula.instance.GetCurTilePosition();
+        if (curCursorPos == null)
+        {
+            return;
+        }
+
 
         if (isConstructing) //Mode Construct
         {

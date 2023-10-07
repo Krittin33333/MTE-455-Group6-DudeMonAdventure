@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Formula : MonoBehaviour
 {
-    public Camera cam;
+    public Camera Bulidingcam;
 
     public static Formula instance;
     private float _gridSize = 0.5f;
@@ -13,6 +13,10 @@ public class Formula : MonoBehaviour
     void Awake()
     {
         instance = this;
+        if (Bulidingcam == null)
+        {
+            return;
+        }
     }
 
     // Start is called before the first frame update
@@ -23,14 +27,16 @@ public class Formula : MonoBehaviour
 
     public Vector3 GetCurTilePosition()
     {
+
+
         if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
         {
-            //Debug.Log(Input.mousePosition);
+            Debug.Log(Input.mousePosition);
             return new Vector3(0, -99, 0);
         }
 
         Plane plane = new Plane(Vector3.up, Vector3.zero);
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Bulidingcam.ScreenPointToRay(Input.mousePosition);
 
         float rayDistance = 0.0f;
 
