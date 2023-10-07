@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogText;
+    public Image characterPanel;
     // Start is called before the first frame update
     private Queue<string> sentences;
     public AudioSource ClickSound;
@@ -20,7 +21,7 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog (Dialog dialog)
     {
-       
+        characterPanel.sprite = dialog.CharacUI;
         nameText.text = dialog.name;
 
         sentences.Clear();
@@ -60,5 +61,4 @@ public class DialogManager : MonoBehaviour
         Debug.Log("End of conversation.");
     }
 
- 
 }
