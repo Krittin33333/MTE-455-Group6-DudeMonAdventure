@@ -29,7 +29,7 @@ public class SwitchScene : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            if (mapScene == "TutorialTB"|| mapScene == "Turnbase")
+            if (mapScene == "TutorialTB"|| mapScene == "Turnbase" || mapScene == "Turnbase_M")
             {
                 Office.instance.Setlevelenemy(DudemonPrefab);
                 Loading();
