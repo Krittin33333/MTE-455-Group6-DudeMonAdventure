@@ -304,12 +304,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Rabito
-  unitLevel: 1
-  damage: 6
-  damage2: 6
-  damage3: 6
-  maxHP: 33
-  currentHP: 33
+  unitLevel: 100
+  damage: 60
+  damage2: 60
+  damage3: 60
+  maxHP: 333
+  currentHP: 333
   state: 0
   HPbase: 33
   Atkbase: 6

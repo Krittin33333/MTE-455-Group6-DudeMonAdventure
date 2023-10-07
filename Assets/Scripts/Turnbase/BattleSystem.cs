@@ -218,7 +218,7 @@ public class BattleSystem : MonoBehaviour
 
     public void switchscene()
     {
-        Office.instance.LevelPlayer += 10;
+        Office.instance.LevelPlayer += Random.Range(0, 5);
         SceneManager.LoadScene(mapScene);
     }
     void EndBattleLost()
