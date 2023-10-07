@@ -3682,7 +3682,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -12141,6 +12141,10 @@ PrefabInstance:
     - target: {fileID: -9109834754019370666, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7308552969621991743, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
+      propertyPath: unitLevel
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -4846440390769943311, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
       propertyPath: player

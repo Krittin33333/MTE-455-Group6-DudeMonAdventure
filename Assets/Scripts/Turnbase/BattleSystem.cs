@@ -30,6 +30,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] string mapScene;
     [SerializeField] string mapScenelost;
 
+    public GameObject LoadingScene;
+
     public static BattleSystem instance;
 
     private void Awake()
@@ -137,12 +139,13 @@ public class BattleSystem : MonoBehaviour
         EnemyHUD.SetHP(enemyUnit.CurrentHP);
         dialogueText.text = "โจมตีสำเร็จ";
         CommandOff();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3.5f);
 
         if (isDead)
         {
             state = BattleState.WON;
             EndBattle();
+            Loading();
             yield return new WaitForSeconds(2.5f);
             switchscene();
         }
@@ -155,7 +158,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3.5f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.Damage);
 
@@ -172,6 +175,7 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.LOST;
             
             EndBattleLost();
+            Loading();
             yield return new WaitForSeconds(2.5f);
             switchscenelost();
 
@@ -191,6 +195,14 @@ public class BattleSystem : MonoBehaviour
             dialogueText.text = "Dudemon ของคุณเอาชนะ " + enemyUnit.UnitName;
         }
 
+    }
+
+    public void Loading()
+    {
+        if (LoadingScene.activeSelf != true)
+        {
+            LoadingScene.SetActive(true);
+        }
     }
 
     public void switchscene()
