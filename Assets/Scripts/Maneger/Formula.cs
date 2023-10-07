@@ -13,27 +13,24 @@ public class Formula : MonoBehaviour
     void Awake()
     {
         instance = this;
-        if (Bulidingcam == null)
-        {
-            return;
-        }
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-       // cam = Camera.main;
+       // Bulidingcam = Camera.main;
     }
 
     public Vector3 GetCurTilePosition()
     {
 
 
-        if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
+      /*  if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
         {
             Debug.Log(Input.mousePosition);
             return new Vector3(0, -99, 0);
-        }
+        }*/
 
         Plane plane = new Plane(Vector3.up, Vector3.zero);
         Ray ray = Bulidingcam.ScreenPointToRay(Input.mousePosition);
