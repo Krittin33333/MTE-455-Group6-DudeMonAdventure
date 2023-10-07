@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 045d8534c4d758e40a765a22c7427372
+  - enabled: 1
     path: Assets/Scenes/Dudemon_farmscene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps_Village.unity
     guid: 9e9a022731060ab47aef2791ede92554
-  - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
-    guid: 3d5dfa88998d466419dabb917c624c09
   - enabled: 1
     path: Assets/Scenes/VillageStart.unity
     guid: ebefc47a8e24f6d47839958795038651

@@ -8,6 +8,7 @@ public class SwitchScene : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] string mapScene;
     public GameObject LoadingScene;
+    public AudioSource SwitchAudio;
 
     [SerializeField] private GameObject dudemonPrefab;
     public GameObject DudemonPrefab { get { return dudemonPrefab; } }
@@ -23,9 +24,9 @@ public class SwitchScene : MonoBehaviour
     {
         if (LoadingScene != null)
         {
+
             
-        
-        print("Trigger Enter");
+            print("Trigger Enter");
 
         if (other.tag == "Player")
         {
@@ -44,8 +45,9 @@ public class SwitchScene : MonoBehaviour
                 SceneManager.LoadScene(mapScene);
                 
             }
-            else { 
-            Loading();
+            else {
+                    SwitchAudio.Play();
+                    Loading();
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(mapScene);
             }

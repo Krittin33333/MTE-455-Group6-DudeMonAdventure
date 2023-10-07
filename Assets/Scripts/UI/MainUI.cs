@@ -61,4 +61,9 @@ public class MainUI : MonoBehaviour
         else
             SettingPanel.SetActive(false);
     }
+    public void ExitScence()
+    {
+        Application.Quit();
+    
+    }
 }
