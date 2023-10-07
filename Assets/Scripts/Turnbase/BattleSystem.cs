@@ -173,6 +173,7 @@ public class BattleSystem : MonoBehaviour
         if (isDead ) 
         {
             state = BattleState.LOST;
+
             
             EndBattleLost();
             Loading();
@@ -207,6 +208,7 @@ public class BattleSystem : MonoBehaviour
 
     public void switchscene()
     {
+        Office.instance.LevelPlayer += 10;
         SceneManager.LoadScene(mapScene);
     }
     void EndBattleLost()
