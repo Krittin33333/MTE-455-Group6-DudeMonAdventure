@@ -38,6 +38,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject EffectButton2;
     public GameObject EffectButton3;
     public GameObject EffectButton4;
+    public GameObject EffectA;
 
     private void Awake()
     {
@@ -170,6 +171,9 @@ public class BattleSystem : MonoBehaviour
         EffectButton3.SetActive(false);
         EffectButton4.SetActive(false);
 
+        if (!EffectA.activeInHierarchy)
+            EffectA.SetActive(true);
+
         bool isDead = playerUnit.TakeDamage(enemyUnit.Damage);
 
         CommandOff();
@@ -237,6 +241,9 @@ public class BattleSystem : MonoBehaviour
 
     public void PlayerTurn()
     {
+
+        EffectA.SetActive(false);
+
         CommandOn();
         dialogueText.text = "เลือกท่าโจมตี";
     }

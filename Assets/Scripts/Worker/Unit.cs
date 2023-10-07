@@ -83,7 +83,7 @@ public class Unit : MonoBehaviour
     }
     public void Heal(int amount)
     {
-        currentHP += amount;
+        currentHP += amount+(5* unitLevel);
         if (currentHP > maxHP)
             currentHP = maxHP;
     }
