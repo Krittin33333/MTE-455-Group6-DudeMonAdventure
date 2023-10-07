@@ -48,6 +48,8 @@ public class BattleSystem : MonoBehaviour
     {
         EnemyPrefab = Office.instance.Enemyhitted;
         Destroy(Office.instance.Enemyhitted);
+        Unit.instance.SetStausHP();
+        Unit.instance.SetAttack();
     }
 
 
@@ -64,6 +66,13 @@ public class BattleSystem : MonoBehaviour
 
         dialogueText.text = enemyUnit.UnitName + " ป่าเข้าจู่โจม!!!";
 
+        playerUnit.UnitLevel = Office.instance.LevelPlayer;
+
+        playerUnit.CurrentHP = (int)(Unit.instance.HPbase * (1 + (0.095 * Office.instance.LevelPlayer) - 0.095));
+        playerUnit.MaxHP = (int)(Unit.instance.HPbase * (1 + (0.095 * Office.instance.LevelPlayer) - 0.095));
+        playerUnit.Damage = (int)(Unit.instance.Atkbase * (1 + (0.095 * Office.instance.LevelPlayer) - 0.095));
+        playerUnit.Damage2 = playerUnit.Damage;
+        playerUnit.Damage3 = playerUnit.Damage;
 
         PlayerHUD.setHUD(playerUnit);
         EnemyHUD.setHUD(enemyUnit);

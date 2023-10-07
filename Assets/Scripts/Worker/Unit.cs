@@ -36,8 +36,8 @@ public class Unit : MonoBehaviour
     [SerializeField] protected UnitState state;
     public UnitState State { get { return state; } set { state = value; } }
 
-    private int HPbase = 33;
-    private int Atkbase = 6;
+    public int HPbase = 33;
+    public int Atkbase = 6;
 
     public static Unit instance;
 
@@ -90,13 +90,13 @@ public class Unit : MonoBehaviour
 
     public void SetStausHP()
     {
-        maxHP = (int)(HPbase * (1 + (0.095 * unitLevel) - 0.095));
-        currentHP = maxHP;
+        MaxHP = (int)(HPbase * (1 + (0.095 * UnitLevel) - 0.095));
+        CurrentHP = maxHP;
 
     }
 
     public void SetAttack()
     {
-        damage = (int)(Atkbase * (1 + (0.095 * unitLevel) - 0.095));
+        Damage = (int)(Atkbase * (1 + (0.095 * UnitLevel) - 0.095));
     }
 }
