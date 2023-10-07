@@ -17,7 +17,7 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
-    public Vector3 targetPosition = new Vector3(3.48f, 62.32802f, 7.39f);
+    public Vector3 targetPosition = new Vector3(3.48f, -1f, 7.39f);
     public Vector3 targetRotation = new Vector3(0f, 224.791f, 0f);
 
     public TextMeshProUGUI dialogueText;
@@ -35,14 +35,19 @@ public class BattleSystem : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        EnemyPrefab = Office.instance.Enemyhitted;
-        Destroy(Office.instance.Enemyhitted);
+        SetHero();
     }
 
     void Start()
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+    }
+
+    public void SetHero()
+    {
+        EnemyPrefab = Office.instance.Enemyhitted;
+        Destroy(Office.instance.Enemyhitted);
     }
 
 

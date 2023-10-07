@@ -248,7 +248,6 @@ MonoBehaviour:
   damage3: 0
   maxHP: 30
   currentHP: 30
-  targetStructure: {fileID: 0}
   state: 0
 --- !u!195 &1050682316373892927
 NavMeshAgent:

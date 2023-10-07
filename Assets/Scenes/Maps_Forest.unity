@@ -10057,6 +10057,7 @@ MonoBehaviour:
   income: 0
   levelenemy: 0
   enemyhitted: {fileID: 0}
+  levelPlayer: 0
   workers: []
   dailyCostWages: 0
   structures: []
@@ -14607,6 +14608,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5804083966003602783, guid: 3af763b555b26f74cb0076af0a9fb00a, type: 3}
   m_PrefabInstance: {fileID: 65852020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1396422481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396422480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e2dc2b27e8c1346870392fb97041c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: 
+  unitLevel: 1
+  damage: 0
+  damage2: 0
+  damage3: 0
+  maxHP: 0
+  currentHP: 0
+  state: 0
 --- !u!1001 &1421336374
 PrefabInstance:
   m_ObjectHideFlags: 0

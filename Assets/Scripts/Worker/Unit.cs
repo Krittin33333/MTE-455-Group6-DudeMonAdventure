@@ -33,9 +33,6 @@ public class Unit : MonoBehaviour
     [SerializeField] protected int currentHP;
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
 
-    [SerializeField] protected GameObject targetStructure;
-    public GameObject TargetStructure { get { return targetStructure; } set { targetStructure = value; } }
-
     [SerializeField] protected UnitState state;
     public UnitState State { get { return state; } set { state = value; } }
 

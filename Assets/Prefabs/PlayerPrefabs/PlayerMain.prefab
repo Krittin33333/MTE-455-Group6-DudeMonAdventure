@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 5385259470909301941}
   - component: {fileID: 8531008306238618265}
   - component: {fileID: 795762039824529425}
+  - component: {fileID: 7505654678498436564}
   m_Layer: 0
   m_Name: Player_Main
   m_TagString: Player
@@ -319,6 +320,26 @@ MonoBehaviour:
   isIdle: 1
   rotationSpeed: 6
   Anime: {fileID: 7678419991239095309}
+--- !u!114 &7505654678498436564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804083966003602783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e2dc2b27e8c1346870392fb97041c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Player
+  unitLevel: 1
+  damage: 0
+  damage2: 0
+  damage3: 0
+  maxHP: 0
+  currentHP: 0
+  state: 0
 --- !u!1 &8336345406254376346
 GameObject:
   m_ObjectHideFlags: 0

@@ -465,8 +465,8 @@ RectTransform:
   - {fileID: 198346997}
   - {fileID: 1817278496}
   - {fileID: 1741467607}
-  m_Father: {fileID: 1142637353}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4383,8 +4383,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484575135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.03, y: -0.8499994, z: 12.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.03, y: -0.8499994, z: 14.71}
+  m_LocalScale: {x: 5.232442, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1611586632}
@@ -4410,7 +4410,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484575135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4467,6 +4467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapScene: Maps_Mountain
   LoadingScene: {fileID: 1727349234}
+  dudemonPrefab: {fileID: 0}
 --- !u!1 &495843833
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,7 +5173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1509899544437103465, guid: b1c4907f3ae38cf49a506382b8351334, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1509899544437103465, guid: b1c4907f3ae38cf49a506382b8351334, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10891,9 +10892,8 @@ Transform:
   - {fileID: 286529301}
   - {fileID: 1497074872}
   - {fileID: 2029765674}
-  - {fileID: 56034871}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1152672735
 GameObject:
@@ -12749,7 +12749,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1285434424
 PrefabInstance:
@@ -12968,7 +12968,7 @@ Transform:
   m_Children:
   - {fileID: 1103660104}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1297653807
 MonoBehaviour:
@@ -16702,7 +16702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633276221}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.19000244, y: 0.27679443, z: -11.82}
+  m_LocalPosition: {x: -0.19000244, y: 0.27679443, z: -11.61}
   m_LocalScale: {x: 34.98339, y: 0.71, z: 3.1899998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20362,8 +20362,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017589639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.361, y: -0.8499994, z: 1.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -17.77, y: -0.8499994, z: 1.97}
+  m_LocalScale: {x: 1, y: 1, z: 2.8912053}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1611586632}
@@ -20389,7 +20389,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017589639}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -20446,6 +20446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapScene: Maps_Forest
   LoadingScene: {fileID: 1727349234}
+  dudemonPrefab: {fileID: 0}
 --- !u!1 &2018934919
 GameObject:
   m_ObjectHideFlags: 0
@@ -21572,8 +21573,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5244
+      objectReference: {fileID: 0}
+    - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.34
+      value: 14.94
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21581,7 +21586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.204
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21614,6 +21619,10 @@ PrefabInstance:
     - target: {fileID: 639100957578004903, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 639100957578004952, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004954, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: mapScene

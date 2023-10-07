@@ -17,6 +17,9 @@ public class Office : MonoBehaviour
     [SerializeField] private GameObject enemyhitted;
     public GameObject Enemyhitted { get { return enemyhitted; } set { enemyhitted = value; } }
 
+    [SerializeField] private int levelPlayer;
+    public int LevelPlayer { get { return levelPlayer; } set { levelPlayer = value; } }
+
     [SerializeField] private List<Worker> workers = new List<Worker>();
     public List<Worker> Workers { get { return workers; } }
 
@@ -55,7 +58,12 @@ public class Office : MonoBehaviour
             // If an instance already exists, destroy this one.
             Destroy(gameObject);
         }
+        if (levelPlayer <= 0) 
+        {
+            SetlevelPlayer();
+        }
 
+       
     }
 
     public void AddBuilding(Structure s)
@@ -67,6 +75,11 @@ public class Office : MonoBehaviour
     {
         structures.Remove(s);
         Destroy(s.gameObject);
+    }
+
+    public void SetlevelPlayer()
+    {
+        levelPlayer = Unit.instance.UnitLevel;
     }
 
     public void Setlevelenemy(GameObject UnitObj)
