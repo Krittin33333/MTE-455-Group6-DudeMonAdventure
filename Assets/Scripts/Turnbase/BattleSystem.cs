@@ -40,6 +40,12 @@ public class BattleSystem : MonoBehaviour
     public GameObject EffectButton4;
     public GameObject EffectA;
 
+    public AudioSource EffectNinsan;
+    public AudioSource EffectSupon;
+    public AudioSource Effectcounter;
+    public AudioSource EffectHeal;
+    public AudioSource EffectPurch;
+
     private void Awake()
     {
         instance = this;
@@ -145,7 +151,7 @@ public class BattleSystem : MonoBehaviour
         EnemyHUD.SetHP(enemyUnit.CurrentHP);
         dialogueText.text = "โจมตีสำเร็จ";
         CommandOff();
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.5f);
 
         if (isDead)
         {
@@ -164,6 +170,8 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
+        
+
         yield return new WaitForSeconds(3.5f);
 
         EffectButton.SetActive(false);
@@ -173,6 +181,8 @@ public class BattleSystem : MonoBehaviour
 
         if (!EffectA.activeInHierarchy)
             EffectA.SetActive(true);
+
+        Effectcounter.Play();
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.Damage);
 
@@ -222,7 +232,7 @@ public class BattleSystem : MonoBehaviour
 
     public void switchscene()
     {
-        Office.instance.LevelPlayer += Random.Range(0, 5);
+        Office.instance.LevelPlayer += Random.Range(0, 15);
         SceneManager.LoadScene(mapScene);
     }
     void EndBattleLost()
@@ -266,6 +276,7 @@ public class BattleSystem : MonoBehaviour
     }
     public void OnAttackButton()
     {
+        EffectSupon.Play();
         if (state != BattleState.PLAYERTURN)
             return;
 
@@ -276,6 +287,7 @@ public class BattleSystem : MonoBehaviour
     }
     public void OnPunchButton()
     {
+        EffectPurch.Play();
         if (state != BattleState.PLAYERTURN)
             return;
 
@@ -288,6 +300,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnBiteButton()
     {
+        EffectNinsan.Play();
         if (state != BattleState.PLAYERTURN)
             return;
 
@@ -300,6 +313,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnHealButton()
     {
+        EffectHeal.Play();
         if (state != BattleState.PLAYERTURN)
             return;
 

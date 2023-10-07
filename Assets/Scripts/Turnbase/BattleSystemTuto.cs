@@ -40,6 +40,12 @@ public class BattleSystemTuto : MonoBehaviour
     public GameObject EffectButton4;
     public GameObject EffectA;
 
+    public AudioSource EffectNinsan;
+    public AudioSource EffectSupon;
+    public AudioSource Effectcounter;
+    public AudioSource EffectHeal;
+    public AudioSource EffectPurch;
+
     private void Awake()
     {
         instance = this;
@@ -126,7 +132,7 @@ public class BattleSystemTuto : MonoBehaviour
         EnemyHUD.SetHP(enemyUnit.CurrentHP);
         dialogueText.text = "โจมตีสำเร็จ";
         CommandOff();
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.5f);
 
         if (isDead)
         {
@@ -145,7 +151,8 @@ public class BattleSystemTuto : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        yield return new WaitForSeconds(3.5f);
+        
+        yield return new WaitForSeconds(2.5f);
 
         EffectButton.SetActive(false);
         EffectButton2.SetActive(false);
@@ -154,6 +161,8 @@ public class BattleSystemTuto : MonoBehaviour
 
         if (!EffectA.activeInHierarchy)
             EffectA.SetActive(true);
+
+        Effectcounter.Play();
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.Damage);
 
@@ -244,6 +253,7 @@ public class BattleSystemTuto : MonoBehaviour
     }
     public void OnAttackButton()
     {
+        EffectSupon.Play();
         if (state != BattleState2.PLAYERTURN)
             return;
 
@@ -254,6 +264,8 @@ public class BattleSystemTuto : MonoBehaviour
     }
     public void OnPunchButton()
     {
+        EffectPurch.Play();
+
         if (state != BattleState2.PLAYERTURN)
             return;
 
@@ -266,6 +278,7 @@ public class BattleSystemTuto : MonoBehaviour
 
     public void OnBiteButton()
     {
+        EffectNinsan.Play();
         if (state != BattleState2.PLAYERTURN)
             return;
 
@@ -278,6 +291,7 @@ public class BattleSystemTuto : MonoBehaviour
 
     public void OnHealButton()
     {
+        EffectHeal.Play();
         if (state != BattleState2.PLAYERTURN)
             return;
 

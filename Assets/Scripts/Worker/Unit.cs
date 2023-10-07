@@ -72,8 +72,8 @@ public class Unit : MonoBehaviour
     }
     public bool TakeDamage3(int damage3)
     {
-        currentHP -= damage3*MaxHP;
-
+        currentHP -= damage3+(currentHP * 15/100);
+        Debug.Log(currentHP);
         if (currentHP <= 0)
             return true;
         else
@@ -83,7 +83,7 @@ public class Unit : MonoBehaviour
     }
     public void Heal(int amount)
     {
-        currentHP += amount+(5* unitLevel);
+        currentHP += amount+(maxHP * 30 / 100);
         if (currentHP > maxHP)
             currentHP = maxHP;
     }

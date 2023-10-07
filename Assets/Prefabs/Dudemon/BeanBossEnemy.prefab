@@ -244,12 +244,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Bean
-  unitLevel: 100
+  unitLevel: 150
   damage: 66
   damage2: 66
   damage3: 66
-  maxHP: 322
-  currentHP: 322
+  maxHP: 800
+  currentHP: 800
   state: 0
   HPbase: 33
   Atkbase: 6
