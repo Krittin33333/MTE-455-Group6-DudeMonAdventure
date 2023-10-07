@@ -26,11 +26,11 @@ public class Formula : MonoBehaviour
     {
 
 
-      /*  if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
+        if (EventSystem.current.IsPointerOverGameObject() == false) //Hover over UI
         {
             Debug.Log(Input.mousePosition);
             return new Vector3(0, -99, 0);
-        }*/
+        }
 
         Plane plane = new Plane(Vector3.up, Vector3.zero);
         Ray ray = Bulidingcam.ScreenPointToRay(Input.mousePosition);

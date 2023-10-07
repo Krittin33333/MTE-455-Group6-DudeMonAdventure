@@ -7686,6 +7686,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.888
+      objectReference: {fileID: 0}
+    - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.324
       objectReference: {fileID: 0}
@@ -7695,7 +7699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.867382
+      value: -27.07
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004902, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7728,6 +7732,10 @@ PrefabInstance:
     - target: {fileID: 639100957578004903, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: m_Name
       value: WarpScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 639100957578004952, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639100957578004954, guid: 92dcefa20cf4fcf40a9cc341e98dc3de, type: 3}
       propertyPath: mapScene

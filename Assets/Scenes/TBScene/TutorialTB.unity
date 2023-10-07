@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 05deace4d2ecbbc429acb6d8ace3fb3f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a2ff5bc62269e1e4d89c7927057e1d3c, type: 2}
 --- !u!1001 &4771681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -705,8 +705,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084370203}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+      - m_Target: {fileID: 1084370204}
+        m_TargetAssemblyTypeName: BattleSystemTuto, Assembly-CSharp
         m_MethodName: OnBiteButton
         m_Mode: 1
         m_Arguments:
@@ -1555,8 +1555,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084370203}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+      - m_Target: {fileID: 1084370204}
+        m_TargetAssemblyTypeName: BattleSystemTuto, Assembly-CSharp
         m_MethodName: OnAttackButton
         m_Mode: 1
         m_Arguments:
@@ -3115,8 +3115,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084370203}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+      - m_Target: {fileID: 1084370204}
+        m_TargetAssemblyTypeName: BattleSystemTuto, Assembly-CSharp
         m_MethodName: OnHealButton
         m_Mode: 1
         m_Arguments:
@@ -3633,7 +3633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1084370202}
-  - component: {fileID: 1084370203}
+  - component: {fileID: 1084370204}
   m_Layer: 0
   m_Name: Battle System
   m_TagString: Untagged
@@ -3656,7 +3656,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1084370203
+--- !u!114 &1084370204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3665,12 +3665,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084370201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 422a659dd484daa4384830765f6c614b, type: 3}
+  m_Script: {fileID: 11500000, guid: f976dd6aad1ab654bba4668df64c0480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  PlayerPrefabs: {fileID: 3210286461202041609, guid: db5702bf1f7c0cc4587e6ebcde38a796, type: 3}
-  EnemyPrefab: {fileID: 8239481733719546058, guid: 653ff6dbf23cdcd4c815a925710a7140, type: 3}
+  PlayerPrefabs: {fileID: 3210286461202041609, guid: c4b0042830e8b08479ac28abca886105, type: 3}
+  EnemyPrefab: {fileID: 8239481733719546058, guid: afc39040aba28b842bdf14e799c8ad64, type: 3}
   CommandPanel: {fileID: 1628729228}
   playerBattleStation: {fileID: 867838407}
   enemyBattleStation: {fileID: 1241624758}
@@ -4148,8 +4148,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084370203}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+      - m_Target: {fileID: 1084370204}
+        m_TargetAssemblyTypeName: BattleSystemTuto, Assembly-CSharp
         m_MethodName: OnPunchButton
         m_Mode: 1
         m_Arguments:
