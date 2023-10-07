@@ -16,6 +16,7 @@ public class MainUI : MonoBehaviour
     public GameObject farmPanel;
     public GameObject laborMarketPanel;
     public GameObject SettingPanel;
+    public GameObject tutorialImage;
 
     public static MainUI instance;
 
@@ -60,6 +61,14 @@ public class MainUI : MonoBehaviour
             SettingPanel.SetActive(true);
         else
             SettingPanel.SetActive(false);
+    }
+
+    public void ToggletutorialImage()
+    {
+        if (!tutorialImage.activeInHierarchy)
+            tutorialImage.SetActive(true);
+        else
+            tutorialImage.SetActive(false);
     }
     public void ExitScence()
     {
