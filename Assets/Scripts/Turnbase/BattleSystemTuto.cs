@@ -34,6 +34,11 @@ public class BattleSystemTuto : MonoBehaviour
 
     public static BattleSystemTuto instance;
 
+    public GameObject EffectButton;
+    public GameObject EffectButton2;
+    public GameObject EffectButton3;
+    public GameObject EffectButton4;
+
     private void Awake()
     {
         instance = this;
@@ -139,7 +144,13 @@ public class BattleSystemTuto : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
+
         yield return new WaitForSeconds(3.5f);
+
+        EffectButton.SetActive(false);
+        EffectButton2.SetActive(false);
+        EffectButton3.SetActive(false);
+        EffectButton4.SetActive(false);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.Damage);
 
@@ -231,12 +242,18 @@ public class BattleSystemTuto : MonoBehaviour
         if (state != BattleState2.PLAYERTURN)
             return;
 
+        if (!EffectButton2.activeInHierarchy)
+            EffectButton2.SetActive(true);
+
         StartCoroutine (PlayerAttack());
     }
     public void OnPunchButton()
     {
         if (state != BattleState2.PLAYERTURN)
             return;
+
+        if (!EffectButton.activeInHierarchy)
+            EffectButton.SetActive(true);
 
         StartCoroutine(PlayerAttack2());
         
@@ -247,6 +264,9 @@ public class BattleSystemTuto : MonoBehaviour
         if (state != BattleState2.PLAYERTURN)
             return;
 
+        if (!EffectButton3.activeInHierarchy)
+            EffectButton3.SetActive(true);
+
         StartCoroutine(PlayerAttack3());
 
     }
@@ -255,6 +275,9 @@ public class BattleSystemTuto : MonoBehaviour
     {
         if (state != BattleState2.PLAYERTURN)
             return;
+
+        if (!EffectButton4.activeInHierarchy)
+            EffectButton4.SetActive(true);
 
         StartCoroutine(PlayerHeal());
         Debug.Log("HeeeHeee");
