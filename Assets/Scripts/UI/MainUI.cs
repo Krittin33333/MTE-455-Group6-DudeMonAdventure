@@ -7,7 +7,7 @@ public class MainUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text moneyText;
     [SerializeField] private TMP_Text staffText;
-  //  [SerializeField] private TMP_Text wheatText;
+    [SerializeField] private TMP_Text LevelText;
 
     [SerializeField] private TMP_Text farmNameText;
     public TMP_Text FarmNameText
@@ -29,7 +29,8 @@ public class MainUI : MonoBehaviour
     public void UpdateResourceUI()
     {
         moneyText.text = (Office.instance.Money.ToString()+" ( +" + Office.instance.Income.ToString() + " )");
-        staffText.text = Office.instance.Workers.Count.ToString();
+      //  staffText.text = Office.instance.Workers.Count.ToString();
+        LevelText.text = Office.instance.LevelPlayer.ToString();
         //wheatText.text = Office.instance.Wheat.ToString();
     }
 
